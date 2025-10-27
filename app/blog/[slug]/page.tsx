@@ -178,13 +178,3 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     </article>
   )
 }
-
-      </div>
-    </article>
-  )
-}
-
-      </div>
-    </article>
-  )
-}
