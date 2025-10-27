@@ -1,6 +1,13 @@
 export default function LinksPage() {
   // 友情链接
-  const friendLinks = [
+  const friendLinks: Array<{
+    name: string
+    url: string
+    description: string
+    logo: string
+    logoSize: string
+    bgColor?: string
+  }> = [
     { 
       name: 'Gerrit1999', 
       url: 'https://gerrit1999.github.io/', 
