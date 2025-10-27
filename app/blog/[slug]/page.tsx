@@ -16,9 +16,23 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  // 提取标题作为目录
+  const headings = post.content
+    .split('\n')
+    .map((line, index) => {
+      if (line.startsWith('## ')) {
+        return { id: `heading-${index}`, text: line.substring(3), level: 2 }
+      }
+      if (line.startsWith('### ')) {
+        return { id: `heading-${index}`, text: line.substring(4), level: 3 }
+      }
+      return null
+    })
+    .filter(Boolean)
+
   return (
     <article className="min-h-screen bg-white pt-14 pb-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="pt-20 pb-8">
           <Link
@@ -37,8 +51,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </Link>
         </div>
 
-        {/* Article Header */}
-        <header className="mb-12 animate-fade-in">
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            {/* Article Header */}
+            <header className="mb-12 animate-fade-in">
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
             <span>·</span>
@@ -52,18 +70,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <p className="text-xl text-gray-600 leading-relaxed">
             {post.excerpt}
           </p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mt-6">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-4 py-2 bg-gray-100 text-xiaomi-text text-sm font-medium"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
         </header>
 
         {/* Article Image */}
@@ -85,13 +91,13 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               }).map((line, index) => {
                 // 处理标题
                 if (line.startsWith('# ')) {
-                  return <h1 key={index} className="text-3xl font-black text-xiaomi-text mt-8 mb-3 tracking-tight">{line.substring(2)}</h1>
+                  return <h1 key={index} id={`heading-${index}`} className="text-3xl font-black text-xiaomi-text mt-8 mb-3 tracking-tight scroll-mt-24">{line.substring(2)}</h1>
                 }
                 if (line.startsWith('## ')) {
-                  return <h2 key={index} className="text-2xl font-bold text-xiaomi-text mt-7 mb-2.5">{line.substring(3)}</h2>
+                  return <h2 key={index} id={`heading-${index}`} className="text-2xl font-bold text-xiaomi-text mt-7 mb-2.5 scroll-mt-24">{line.substring(3)}</h2>
                 }
                 if (line.startsWith('### ')) {
-                  return <h3 key={index} className="text-xl font-bold text-xiaomi-text mt-6 mb-2">{line.substring(4)}</h3>
+                  return <h3 key={index} id={`heading-${index}`} className="text-xl font-bold text-xiaomi-text mt-6 mb-2 scroll-mt-24">{line.substring(4)}</h3>
                 }
                 // 处理空行
                 if (line.trim() === '') {
@@ -141,29 +147,90 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        {/* Related Posts */}
-        <div className="mt-16 pt-12 border-t border-gray-200">
-          <h3 className="text-3xl font-bold text-xiaomi-text mb-8">相关文章</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {getAllPosts()
-              .filter(p => p.slug !== post.slug && p.category === post.category)
-              .slice(0, 2)
-              .map((relatedPost) => (
-                <Link
-                  key={relatedPost.slug}
-                  href={`/blog/${relatedPost.slug}`}
-                  className="group p-6 bg-gray-50 hover:bg-gray-100 transition-colors"
-                >
-                  <p className="text-sm text-gray-500 mb-2">{relatedPost.date}</p>
-                  <h4 className="text-lg font-bold text-xiaomi-text mb-2 group-hover:text-xiaomi-orange transition-colors">
-                    {relatedPost.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm line-clamp-2">
-                    {relatedPost.excerpt}
-                  </p>
-                </Link>
-              ))}
+            {/* Related Posts */}
+            <div className="mt-16 pt-12 border-t border-gray-200">
+              <h3 className="text-3xl font-bold text-xiaomi-text mb-8">相关文章</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {getAllPosts()
+                  .filter(p => p.slug !== post.slug && p.category === post.category)
+                  .slice(0, 2)
+                  .map((relatedPost) => (
+                    <Link
+                      key={relatedPost.slug}
+                      href={`/blog/${relatedPost.slug}`}
+                      className="group p-6 bg-gray-50 hover:bg-gray-100 transition-colors"
+                    >
+                      <p className="text-sm text-gray-500 mb-2">{relatedPost.date}</p>
+                      <h4 className="text-lg font-bold text-xiaomi-text mb-2 group-hover:text-xiaomi-orange transition-colors">
+                        {relatedPost.title}
+                      </h4>
+                      <p className="text-gray-600 text-sm line-clamp-2">
+                        {relatedPost.excerpt}
+                      </p>
+                    </Link>
+                  ))}
+              </div>
+            </div>
           </div>
+
+          {/* Sidebar - Table of Contents */}
+          <aside className="hidden lg:block lg:col-span-4">
+            <div className="sticky top-24">
+              {/* 文章信息卡片 */}
+              <div className="bg-gray-50 p-6 mb-6">
+                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">文章信息</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>{post.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xiaomi-orange">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                    <span>{post.category}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 目录 */}
+              {headings.length > 0 && (
+                <div className="bg-white border border-gray-200 p-6">
+                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">目录</h3>
+                  <nav className="space-y-2">
+                    {headings.map((heading: any) => (
+                      <a
+                        key={heading.id}
+                        href={`#${heading.id}`}
+                        className={`block text-sm hover:text-xiaomi-orange transition-colors ${
+                          heading.level === 3 ? 'pl-4 text-gray-500' : 'text-gray-700 font-medium'
+                        }`}
+                      >
+                        {heading.text}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              )}
+
+              {/* 标签 */}
+              <div className="mt-6 bg-gray-50 p-6">
+                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">标签</h3>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-white text-xiaomi-text text-xs font-medium border border-gray-200 hover:border-xiaomi-orange transition-colors cursor-pointer"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </article>
