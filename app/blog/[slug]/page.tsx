@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostBySlug, getAllPosts } from '@/lib/posts'
+import TableOfContents from '@/components/TableOfContents'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
@@ -70,13 +71,25 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <p className="text-xl text-gray-600 leading-relaxed">
             {post.excerpt}
           </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mt-6">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-4 py-2 bg-gray-100 text-xiaomi-text text-sm font-medium"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
         </header>
 
         {/* Article Image */}
         <div className="w-full h-96 bg-gradient-to-br from-xiaomi-dark to-xiaomi-dark-light mb-12 animate-slide-up"></div>
 
         {/* Article Content */}
-        <div className="animate-slide-up">
+        <div id="article-content" className="animate-slide-up">
           <div className="text-xiaomi-text">
             {(() => {
               const lines = post.content.split('\n')
@@ -175,61 +188,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
           {/* Sidebar - Table of Contents */}
           <aside className="hidden lg:block lg:col-span-4">
-            <div className="sticky top-24">
-              {/* 文章信息卡片 */}
-              <div className="bg-gray-50 p-6 mb-6">
-                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">文章信息</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xiaomi-orange">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
-                    <span>{post.category}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 目录 */}
-              {headings.length > 0 && (
-                <div className="bg-white border border-gray-200 p-6">
-                  <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">目录</h3>
-                  <nav className="space-y-2">
-                    {headings.map((heading: any) => (
-                      <a
-                        key={heading.id}
-                        href={`#${heading.id}`}
-                        className={`block text-sm hover:text-xiaomi-orange transition-colors ${
-                          heading.level === 3 ? 'pl-4 text-gray-500' : 'text-gray-700 font-medium'
-                        }`}
-                      >
-                        {heading.text}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              )}
-
-              {/* 标签 */}
-              <div className="mt-6 bg-gray-50 p-6">
-                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">标签</h3>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-white text-xiaomi-text text-xs font-medium border border-gray-200 hover:border-xiaomi-orange transition-colors cursor-pointer"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <TableOfContents headings={headings as any[]} />
           </aside>
         </div>
       </div>
