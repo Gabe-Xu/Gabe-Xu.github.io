@@ -23,11 +23,11 @@ export default function Navbar() {
             <Link href="/blog" className="text-sm text-xiaomi-text hover:text-xiaomi-orange transition-colors">
               博客
             </Link>
+            <Link href="/links" className="text-sm text-xiaomi-text hover:text-xiaomi-orange transition-colors">
+              链接
+            </Link>
             <Link href="/about" className="text-sm text-xiaomi-text hover:text-xiaomi-orange transition-colors">
               关于
-            </Link>
-            <Link href="/contact" className="text-sm text-xiaomi-text hover:text-xiaomi-orange transition-colors">
-              联系
             </Link>
           </div>
 
@@ -72,18 +72,18 @@ export default function Navbar() {
               博客
             </Link>
             <Link 
+              href="/links" 
+              className="block px-4 py-2 text-xiaomi-text hover:bg-gray-100 rounded-lg transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              链接
+            </Link>
+            <Link 
               href="/about" 
               className="block px-4 py-2 text-xiaomi-text hover:bg-gray-100 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               关于
-            </Link>
-            <Link 
-              href="/contact" 
-              className="block px-4 py-2 text-xiaomi-text hover:bg-gray-100 rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              联系
             </Link>
           </div>
         </div>

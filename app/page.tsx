@@ -131,7 +131,7 @@ export default function Home() {
             对合作或交流感兴趣？
           </p>
           <Link 
-            href="/contact" 
+            href="/about" 
             className="inline-block px-16 py-5 bg-xiaomi-orange text-white hover:bg-xiaomi-orange-hover transition-all duration-200 font-medium text-base"
           >
             联系我

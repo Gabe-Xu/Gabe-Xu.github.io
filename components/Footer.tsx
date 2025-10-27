@@ -30,13 +30,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  关于
+                <Link href="/links" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  链接
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  联系
+                <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  关于
                 </Link>
               </li>
             </ul>

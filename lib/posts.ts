@@ -19,8 +19,6 @@ const posts: Post[] = [
     content: `
 # 现代Web设计的核心原则
 
-在当今快速发展的数字时代，优秀的网站设计不仅要美观，更要注重用户体验和品牌识别度。
-
 ## 1. 极简主义
 
 少即是多。去除不必要的元素，让内容成为焦点。
@@ -49,8 +47,6 @@ const posts: Post[] = [
     excerpt: '深入了解Next.js的性能优化技巧，包括图片优化、代码分割、服务端渲染等最佳实践。',
     content: `
 # Next.js性能优化实践指南
-
-Next.js作为React生态中最受欢迎的框架之一，提供了许多开箱即用的性能优化特性。
 
 ## 图片优化
 
@@ -81,8 +77,6 @@ Next.js自动进行代码分割，只加载当前页面需要的代码。
     content: `
 # TypeScript开发最佳实践
 
-TypeScript为JavaScript带来了类型安全，显著提升了代码的可维护性和健壮性。
-
 ## 类型定义
 
 始终为函数参数和返回值定义类型，避免使用any。
@@ -112,8 +106,6 @@ TypeScript不仅是工具，更是一种编程思维方式。
     content: `
 # React Hooks深度解析
 
-React Hooks彻底改变了我们编写React组件的方式，让函数组件拥有了状态管理能力。
-
 ## useState
 
 管理组件状态的基础Hook。
@@ -142,8 +134,6 @@ React Hooks彻底改变了我们编写React组件的方式，让函数组件拥�
     excerpt: '探讨Tailwind CSS这个实用优先的CSS框架如何帮助开发者快速构建美观的界面。',
     content: `
 # Tailwind CSS如何提升开发效率
-
-Tailwind CSS是一个实用优先的CSS框架，让样式开发变得前所未有的高效。
 
 ## 实用优先
 
