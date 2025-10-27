@@ -6,9 +6,9 @@ export default function Home() {
   const featuredPosts = posts.slice(0, 3)
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       {/* Hero Section - 小米风格：超大字体、极简、留白 */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white pt-14">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 pt-14">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center animate-fade-in py-20">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-xiaomi-text mb-8 tracking-tighter leading-none">
             Gabriel
@@ -30,16 +30,16 @@ export default function Home() {
               href="/about" 
               className="px-12 py-4 bg-white text-xiaomi-text text-base font-medium border border-gray-200 hover:bg-gray-100 transition-all duration-200"
             >
-              关于我
+              关于
             </Link>
           </div>
         </div>
       </section>
 
       {/* 特色内容区 - 小米风格：大图配简短文字 */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* 卡片1 */}
             <div className="group relative overflow-hidden bg-gray-100 aspect-square">
               <div className="absolute inset-0 bg-xiaomi-orange flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* 最新文章区 - 小米风格：更大留白，简洁卡片 */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -97,24 +97,30 @@ export default function Home() {
               <Link 
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-white overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="group bg-white border border-gray-200 p-6 hover:border-xiaomi-orange hover:shadow-lg transition-all duration-300"
               >
-                <div className="h-64 bg-gradient-to-br from-xiaomi-dark to-xiaomi-dark-light relative overflow-hidden">
-                  <div className="absolute inset-0 bg-xiaomi-orange/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div className="p-8">
-                  <div className="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
                     <span>{post.date}</span>
-                    <span>·</span>
-                    <span className="text-xiaomi-orange">{post.category}</span>
+                    <span className="px-2 py-0.5 text-xiaomi-orange text-sm font-medium">{post.category}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-xiaomi-text mb-3 group-hover:text-xiaomi-orange transition-colors leading-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm line-clamp-2">
-                    {post.excerpt}
-                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+                <h3 className="text-xl font-bold text-xiaomi-text mb-3 group-hover:text-xiaomi-orange transition-colors leading-tight">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed">
+                  {post.excerpt}
+                </p>
               </Link>
             ))}
           </div>

@@ -37,7 +37,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   })
 
   return (
-    <article className="min-h-screen bg-white pt-14 pb-32">
+    <article className="min-h-screen bg-gray-50 pt-14 pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="pt-20 pb-8">
@@ -59,10 +59,14 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         {/* Article Header */}
         <header className="mb-12 animate-fade-in">
-          <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
+          <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
-            <span>·</span>
-            <span className="text-xiaomi-orange">{post.category}</span>
+            <Link 
+              href={`/blog?category=${encodeURIComponent(post.category)}`}
+              className="text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-sm"
+            >
+              {post.category}
+            </Link>
           </div>
 
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight leading-tight">
@@ -76,18 +80,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-6">
             {post.tags.map((tag) => (
-              <span
+              <Link
                 key={tag}
-                className="px-4 py-2 bg-gray-100 text-xiaomi-text text-sm font-medium"
+                href={`/blog?tag=${encodeURIComponent(tag)}`}
+                className="px-4 py-2 bg-gray-100 hover:bg-xiaomi-orange hover:text-white text-xiaomi-text font-medium transition-colors"
               >
                 #{tag}
-              </span>
+              </Link>
             ))}
           </div>
         </header>
 
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-6">
           {/* Main Content */}
           <div className="lg:w-2/3">
             {/* Article Content */}
@@ -169,6 +174,16 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </div>
+      </div>
+    </article>
+  )
+}
+
+      </div>
+    </article>
+  )
+}
+
       </div>
     </article>
   )

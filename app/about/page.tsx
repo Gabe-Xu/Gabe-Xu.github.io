@@ -1,11 +1,11 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white pt-14 pb-16">
+    <div className="min-h-screen bg-gray-50 pt-14 pb-16">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="pt-20 pb-16 animate-fade-in">
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-xiaomi-text mb-6 tracking-tighter">
-            关于我
+            关于
           </h1>
           <p className="text-xl sm:text-2xl text-gray-400">
             了解我的故事和技术旅程

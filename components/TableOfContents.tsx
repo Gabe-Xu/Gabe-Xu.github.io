@@ -55,7 +55,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
         目录
       </h3>
       <nav className="space-y-3">
-        {headings.map((heading) => (
+        {headings.map((heading, index) => (
           <a
             key={heading.id}
             href={`#${heading.id}`}
@@ -67,6 +67,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                 : 'text-gray-700 font-medium hover:text-xiaomi-orange'
             }`}
           >
+            <span className="inline-block mr-2 text-gray-400">{index + 1}.</span>
             {heading.text}
           </a>
         ))}
@@ -74,4 +75,6 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
     </div>
   )
 }
+
+
 
