@@ -158,10 +158,10 @@ function BlogPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-14 pb-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-12 md:pb-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-20 pb-12 animate-fade-in">
+        <div className="pt-12 md:pt-20 pb-8 md:pb-12 animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">
             博客
           </h1>
@@ -174,9 +174,28 @@ function BlogPageContent() {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Main Content - Blog Posts List */}
           <div className="lg:w-2/3">
-            {/* Active Filters */}
+            {/* Mobile Search - Only visible on mobile */}
+            <div className="lg:hidden mb-6 relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="搜索文章..."
+                className="w-full px-4 py-2 bg-white border border-gray-200 focus:border-xiaomi-orange focus:outline-none focus:ring-1 focus:ring-xiaomi-orange text-sm"
+              />
+              <svg
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+
+            {/* Active Filters - Only visible on desktop */}
             {(searchQuery || selectedCategory || selectedTag || selectedArchive) && (
-              <div className="mb-6 p-4 bg-white border border-gray-200">
+              <div className="hidden lg:block mb-6 p-4 bg-white border border-gray-200">
                 <div className="flex items-center justify-between mb-3">
                   <h4 className="text-sm font-semibold text-xiaomi-text">当前筛选条件：</h4>
             <button
@@ -216,7 +235,7 @@ function BlogPageContent() {
             )}
 
             {/* Blog Posts */}
-            <div className="space-y-6">
+            <div className="space-y-6 pb-12 md:pb-20">
               {filteredPosts.map((post, index) => (
             <article
               key={post.slug}
@@ -227,12 +246,16 @@ function BlogPageContent() {
                   <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                   <time dateTime={post.date}>{post.date}</time>
+                      {/* Category - clickable on desktop, non-clickable on mobile */}
+                      <span className="lg:hidden font-medium px-2 py-0.5 text-sm text-xiaomi-orange">
+                        {post.category}
+                      </span>
                       <button
                         onClick={(e) => {
                           e.preventDefault()
                           handleCategoryClick(post.category)
                         }}
-                        className="font-medium transition-all px-2 py-0.5 text-sm text-xiaomi-orange hover:bg-xiaomi-orange/10"
+                        className="hidden lg:inline-block font-medium transition-all px-2 py-0.5 text-sm text-xiaomi-orange hover:bg-xiaomi-orange/10"
                       >
                         {post.category}
                       </button>
@@ -247,20 +270,29 @@ function BlogPageContent() {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {post.tags.slice(0, 3).map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={(e) => {
-                            e.preventDefault()
-                            handleTagClick(tag)
-                          }}
-                          className={`px-2 py-0.5 text-xs transition-colors ${
+                        <span key={tag}>
+                          {/* Tag - clickable on desktop, non-clickable on mobile */}
+                          <span className={`lg:hidden px-2 py-0.5 text-xs ${
                             selectedTag === tag
                               ? 'bg-xiaomi-orange text-white'
-                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                          }`}
-                        >
-                          #{tag}
-                        </button>
+                              : 'bg-gray-100 text-gray-600'
+                          }`}>
+                            #{tag}
+                          </span>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault()
+                              handleTagClick(tag)
+                            }}
+                            className={`hidden lg:inline-block px-2 py-0.5 text-xs transition-colors ${
+                              selectedTag === tag
+                                ? 'bg-xiaomi-orange text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            }`}
+                          >
+                            #{tag}
+                          </button>
+                        </span>
                       ))}
                     </div>
                 </div>
@@ -290,8 +322,8 @@ function BlogPageContent() {
           {/* Sidebar */}
           <aside className="lg:w-1/3">
             <div className="sticky top-24 space-y-6">
-              {/* Search Module */}
-              <div className="bg-white border border-gray-200 p-6">
+              {/* Search Module - Only visible on desktop */}
+              <div className="hidden lg:block bg-white border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">搜索</h3>
                 <div className="relative">
                   <input
@@ -313,7 +345,7 @@ function BlogPageContent() {
               </div>
 
               {/* Categories Module */}
-              <div className="bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block bg-white border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">分类</h3>
 
                 {/* 分类网格 - 可展开/收起 */}
@@ -361,7 +393,7 @@ function BlogPageContent() {
               </div>
 
               {/* Tags Module */}
-              <div className="bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block bg-white border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">标签</h3>
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => {
@@ -386,7 +418,7 @@ function BlogPageContent() {
               </div>
 
               {/* Archives Module */}
-              <div className="bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block bg-white border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">归档</h3>
                 <div className="space-y-3">
                   {archives.map((yearArchive) => {

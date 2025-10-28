@@ -1,13 +1,13 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-14 pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-16">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-20 pb-16 animate-fade-in">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-xiaomi-text mb-6 tracking-tighter">
+        <div className="pt-12 md:pt-20 pb-8 md:pb-16 animate-fade-in">
+          <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">
             关于
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-400">
+          <p className="text-xl text-gray-600">
             了解我的故事和技术旅程
           </p>
         </div>

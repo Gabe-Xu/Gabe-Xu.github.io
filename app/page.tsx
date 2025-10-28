@@ -62,7 +62,7 @@ export default function Home() {
 
             {/* 卡片3 */}
             <div className="group relative overflow-hidden bg-gray-100 aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
+              <div className="absolute inset-0 bg-gray-100 flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
                 <h3 className="text-4xl font-black text-xiaomi-text mb-4 tracking-tight">技术分享</h3>
                 <p className="text-xiaomi-text text-center text-sm">
                   持续学习 · 不断进步
@@ -74,12 +74,12 @@ export default function Home() {
       </section>
 
       {/* 最新文章区 - 小米风格：更大留白，简洁卡片 */}
-      <section className="py-32 bg-white">
+      <section className="py-12 md:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="flex justify-between items-end mb-16">
+          <div className="flex justify-between items-end mb-8 md:mb-16">
             <div>
-              <h2 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-3 tracking-tight">最新文章</h2>
-              <p className="text-lg text-gray-400">探索最新的技术分享</p>
+              <h2 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">最新文章</h2>
+              <p className="text-xl text-gray-600 max-w-3xl">探索最新的技术分享</p>
             </div>
             <Link 
               href="/blog" 

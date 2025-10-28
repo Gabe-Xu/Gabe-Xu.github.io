@@ -1,10 +1,11 @@
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-white pt-14 pb-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-12 md:pb-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-20 pb-4">
-          <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text tracking-tight">使用条款</h1>
+        <div className="pt-12 md:pt-20 pb-6 md:pb-8 animate-fade-in">
+          <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">使用条款</h1>
+          <p className="text-xl text-gray-600">请仔细阅读以下使用条款</p>
         </div>
 
         {/* Content */}

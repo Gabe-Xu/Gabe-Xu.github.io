@@ -37,10 +37,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   })
 
   return (
-    <article className="min-h-screen bg-gray-50 pt-14 pb-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-12 md:pb-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-20 pb-8">
+        <div className="pt-12 md:pt-20 pb-8">
           <Link
             href="/blog"
             className="inline-flex items-center text-gray-600 hover:text-xiaomi-orange group text-sm"
@@ -61,9 +61,13 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <header className="mb-12 animate-fade-in">
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
+            {/* Category - clickable on desktop, non-clickable on mobile */}
+            <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-sm">
+              {post.category}
+            </span>
             <Link 
               href={`/blog?category=${encodeURIComponent(post.category)}`}
-              className="text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-sm"
+              className="hidden lg:inline-block text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-sm"
             >
               {post.category}
             </Link>
@@ -80,13 +84,18 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-6">
             {post.tags.map((tag) => (
-              <Link
-                key={tag}
-                href={`/blog?tag=${encodeURIComponent(tag)}`}
-                className="px-4 py-2 bg-gray-100 hover:bg-xiaomi-orange hover:text-white text-xiaomi-text font-medium transition-colors"
-              >
-                #{tag}
-              </Link>
+              <span key={tag}>
+                {/* Tag - clickable on desktop, non-clickable on mobile, smaller size */}
+                <span className="lg:hidden px-2 py-0.5 bg-gray-100 text-gray-600 text-xs">
+                  #{tag}
+                </span>
+                <Link
+                  href={`/blog?tag=${encodeURIComponent(tag)}`}
+                  className="hidden lg:inline-block px-2 py-0.5 bg-gray-100 hover:bg-xiaomi-orange hover:text-white text-gray-600 text-xs transition-colors"
+                >
+                  #{tag}
+                </Link>
+              </span>
             ))}
           </div>
         </header>
@@ -131,7 +140,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Sidebar - Table of Contents */}
-          <aside className="lg:w-1/3">
+          <aside className="hidden lg:block lg:w-1/3">
             <div className="sticky top-24">
               <TableOfContents headings={headings} />
             </div>
