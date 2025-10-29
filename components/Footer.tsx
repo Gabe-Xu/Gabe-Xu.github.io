@@ -85,11 +85,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-wrap items-center gap-2 md:gap-4">
+          <div className="flex flex-wrap items-center gap-6">
             <p className="text-gray-500 text-xs">
               © {currentYear} Gabriel
             </p>
-            <span className="text-gray-300 hidden md:inline">·</span>
             <a 
               href="https://icp.gov.moe/?keyword=20259463" 
               target="_blank" 
