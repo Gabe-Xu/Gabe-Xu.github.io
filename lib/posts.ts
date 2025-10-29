@@ -15,25 +15,25 @@ const posts: Post[] = [
     title: '为什么把位图直接当图标会模糊？解读 .ico 文件格式',
     date: '2025-10-29',
     category: '技术',
-    excerpt: '许多人在制作程序图标时，习惯直接使用一张位图，但其实 .ico 文件并不是普通的图片格式，而是一个"图像容器"。本文深入解析ICO格式的工作原理。',
+    excerpt: '许多人在制作程序图标时，习惯直接使用一张位图，但其实 ICO 文件并不是普通的图片格式，而是一个"图像容器"。本文深入解析 ICO 格式的工作原理。',
     content: `
 # 为什么把位图直接当图标会模糊？解读 .ico 文件格式
 
 ## 什么是 ICO 文件格式
 
-许多人在制作程序图标时，习惯直接使用一张位图（如 PNG 或 JPG），但其实 .ico 文件并不是普通的图片格式，而是一个"图像容器"。
+许多人在制作程序图标时，习惯直接使用一张位图（如 PNG 或 JPG），但其实 ICO 文件并不是普通的图片格式，而是一个"图像容器"。
 
 它可以同时包含多张不同分辨率、不同色彩深度的图像。Windows 系统会根据显示位置（如桌面、任务栏）和当前的 DPI 缩放比例，自动选择最合适的一张来显示。
 
-如果 .ico 文件中缺少与显示环境匹配的尺寸，系统就只能强行缩放已有图像，结果往往是模糊或锯齿明显。
+如果 ICO 文件中缺少与显示环境匹配的尺寸，系统就只能强行缩放已有图像，结果往往是模糊或锯齿明显。
 
-换句话说：只要在 .ico 中打包好不同尺寸的图像，桌面、任务栏、资源管理器等位置都能显示出清晰的图标。
+换句话说：只要在 ICO 中打包好不同尺寸的图像，桌面、任务栏、资源管理器等位置都能显示出清晰的图标。
 
 ## 系统是如何选择图标的
 
 Windows 会根据显示目标的尺寸（例如任务栏图标大小）以及当前缩放比例（如 100%、150%、200%）来挑选最匹配的图像版本。
 
-若存在完全匹配的尺寸，系统会直接使用该图像；若没有，就会选择最接近的尺寸并进行插值缩放；缩放会带来画质损失，因此推荐在 .ico 中预先准备多种尺寸。
+若存在完全匹配的尺寸，系统会直接使用该图像；若没有，就会选择最接近的尺寸并进行插值缩放；缩放会带来画质损失，因此推荐在 ICO 中预先准备多种尺寸。
 
 ## 常见图标尺寸及用途
 
@@ -61,20 +61,20 @@ DPI 缩放问题：在 150% 或 200% 等缩放下，若无高分辨率版本会�
 
 图标缓存问题：有时 Windows 缓存未刷新，更新图标后需清理缓存或重启资源管理器。
 
-## 如何把PNG打包成.ico
+## 如何把 PNG 打包成 ICO
 
-推荐使用 https://www.icoconverter.com/ - 支持 PNG、JPEG、GIF、BMP 等多种输入格式，提供多种输出尺寸选择（16×16、32×32、48×48、64×64、256×256），支持位深度设置（8 位、32 位），界面简洁。
+推荐使用 [ICO converter](https://www.icoconverter.com/) 支持 PNG、JPEG、GIF、BMP 等多种输入格式，提供多种输出尺寸选择（16×16、32×32、48×48、64×64、256×256），支持位深度设置（8 位、32 位），界面简洁。
     `,
     tags: ['Windows', '图标', 'ICO']
   },
   {
     slug: 'modern-web-design-principles',
-    title: '现代Web设计的核心原则',
+    title: '现代 Web 设计的核心原则',
     date: '2025-10-20',
     category: '设计',
     excerpt: '探索如何打造简洁、优雅且具有识别度的现代网站设计，学习行业领先公司的设计理念。',
     content: `
-# 现代Web设计的核心原则
+# 现代 Web 设计的核心原则
 
 ## 极简主义
 
@@ -94,32 +94,32 @@ DPI 缩放问题：在 150% 或 200% 等缩放下，若无高分辨率版本会�
 
 通过遵循这些原则，我们可以创造出既美观又实用的网站。
     `,
-    tags: ['设计', 'Web开发', 'UI/UX']
+    tags: ['设计', 'Web 开发', 'UI/UX']
   },
   {
     slug: 'nextjs-performance-optimization',
-    title: 'Next.js性能优化实践指南',
+    title: 'Next.js 性能优化实践指南',
     date: '2025-10-15',
     category: '技术',
-    excerpt: '深入了解Next.js的性能优化技巧，包括图片优化、代码分割、服务端渲染等最佳实践。',
+    excerpt: '深入了解 Next.js 的性能优化技巧，包括图片优化、代码分割、服务端渲染等最佳实践。',
     content: `
-# Next.js性能优化实践指南
+# Next.js 性能优化实践指南
 
 ## 图片优化
 
-使用Next.js的Image组件可以自动优化图片，包括懒加载、响应式图片等。
+使用 Next.js 的 Image 组件可以自动优化图片，包括懒加载、响应式图片等。
 
 ## 代码分割
 
-Next.js自动进行代码分割，只加载当前页面需要的代码。
+Next.js 自动进行代码分割，只加载当前页面需要的代码。
 
 ## 服务端渲染
 
-利用SSR和SSG提升首屏加载速度和SEO表现。
+利用 SSR 和 SSG 提升首屏加载速度和 SEO 表现。
 
 ## 缓存策略
 
-合理使用浏览器缓存和CDN加速。
+合理使用浏览器缓存和 CDN 加速。
 
 掌握这些技巧，你的网站性能将得到显著提升。
     `,
@@ -127,20 +127,20 @@ Next.js自动进行代码分割，只加载当前页面需要的代码。
   },
   {
     slug: 'typescript-best-practices',
-    title: 'TypeScript开发最佳实践',
+    title: 'TypeScript 开发最佳实践',
     date: '2025-10-10',
     category: '技术',
-    excerpt: 'TypeScript已成为大型项目的标配，本文分享如何更好地使用TypeScript提高代码质量。',
+    excerpt: 'TypeScript 已成为大型项目的标配，本文分享如何更好地使用 TypeScript 提高代码质量。',
     content: `
-# TypeScript开发最佳实践
+# TypeScript 开发最佳实践
 
 ## 类型定义
 
-始终为函数参数和返回值定义类型，避免使用any。
+始终为函数参数和返回值定义类型，避免使用 any。
 
-## 接口vs类型别名
+## 接口 vs 类型别名
 
-了解何时使用interface，何时使用type。
+了解何时使用 interface，何时使用 type。
 
 ## 泛型的使用
 
@@ -148,53 +148,53 @@ Next.js自动进行代码分割，只加载当前页面需要的代码。
 
 ## 严格模式
 
-启用strict模式，享受TypeScript的全部优势。
+启用 strict 模式，享受 TypeScript 的全部优势。
 
-TypeScript不仅是工具，更是一种编程思维方式。
+TypeScript 不仅是工具，更是一种编程思维方式。
     `,
     tags: ['TypeScript', 'JavaScript', '编程']
   },
   {
     slug: 'react-hooks-deep-dive',
-    title: 'React Hooks深度解析',
+    title: 'React Hooks 深度解析',
     date: '2025-10-05',
     category: '技术',
-    excerpt: '全面理解React Hooks的工作原理，掌握useState、useEffect等核心Hook的使用技巧。',
+    excerpt: '全面理解 React Hooks 的工作原理，掌握 useState、useEffect 等核心 Hook 的使用技巧。',
     content: `
-# React Hooks深度解析
+# React Hooks 深度解析
 
 ## 状态管理
 
-管理组件状态的基础Hook。
+管理组件状态的基础 Hook。
 
 ## 副作用处理
 
 处理副作用，替代生命周期方法。
 
-## 自定义Hooks
+## 自定义 Hooks
 
 封装可复用的逻辑，提高代码复用性。
 
 ## 性能优化
 
-使用useMemo和useCallback优化性能。
+使用 useMemo 和 useCallback 优化性能。
 
-深入理解Hooks，你将写出更简洁优雅的React代码。
+深入理解 Hooks，你将写出更简洁优雅的 React 代码。
     `,
     tags: ['React', 'Hooks', '前端开发']
   },
   {
     slug: 'tailwind-css-productivity',
-    title: 'Tailwind CSS如何提升开发效率',
+    title: 'Tailwind CSS 如何提升开发效率',
     date: '2025-09-28',
     category: '技术',
-    excerpt: '探讨Tailwind CSS这个实用优先的CSS框架如何帮助开发者快速构建美观的界面。',
+    excerpt: '探讨 Tailwind CSS 这个实用优先的 CSS 框架如何帮助开发者快速构建美观的界面。',
     content: `
-# Tailwind CSS如何提升开发效率
+# Tailwind CSS 如何提升开发效率
 
 ## 实用优先
 
-通过组合实用类快速构建界面，无需离开HTML。
+通过组合实用类快速构建界面，无需离开 HTML。
 
 ## 响应式设计
 
@@ -206,9 +206,9 @@ TypeScript不仅是工具，更是一种编程思维方式。
 
 ## 生产优化
 
-自动清除未使用的CSS，保持最小的文件大小。
+自动清除未使用的 CSS，保持最小的文件大小。
 
-Tailwind让你专注于创造，而不是纠结于CSS。
+Tailwind 让你专注于创造，而不是纠结于 CSS。
     `,
     tags: ['Tailwind CSS', 'CSS', '前端开发']
   }

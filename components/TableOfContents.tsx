@@ -50,7 +50,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
   }
 
   return (
-    <div className="border border-gray-200 p-5">
+    <div className="bg-white border border-gray-200 p-5">
       <h3 className="text-base font-bold text-gray-400 uppercase tracking-wider mb-4">
         目录
       </h3>

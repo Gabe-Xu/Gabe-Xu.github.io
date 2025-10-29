@@ -58,7 +58,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         </div>
 
         {/* Article Header */}
-        <header className="mb-12 animate-fade-in">
+        <header className="mb-12 animate-fade-in lg:max-w-[66.666667%]">
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
             {/* Category - clickable on desktop, non-clickable on mobile */}
@@ -136,8 +136,43 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     if (line.trim() === '') {
                       return null
                     }
-                    // 普通段落
-                    return <p key={index} className="text-gray-600 leading-7 mb-2">{line}</p>
+                    // 普通段落 - 支持 Markdown 链接
+                    const renderLineWithLinks = (text: string) => {
+                      // 匹配 Markdown 链接格式：[文本](URL)
+                      const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+                      const parts = []
+                      let lastIndex = 0
+                      let match
+                      
+                      while ((match = linkRegex.exec(text)) !== null) {
+                        // 添加链接前的文本
+                        if (match.index > lastIndex) {
+                          parts.push(text.substring(lastIndex, match.index))
+                        }
+                        // 添加链接
+                        parts.push(
+                          <a
+                            key={match.index}
+                            href={match[2]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xiaomi-orange hover:text-xiaomi-orange-hover underline"
+                          >
+                            {match[1]}
+                          </a>
+                        )
+                        lastIndex = match.index + match[0].length
+                      }
+                      
+                      // 添加剩余文本
+                      if (lastIndex < text.length) {
+                        parts.push(text.substring(lastIndex))
+                      }
+                      
+                      return parts.length > 0 ? parts : text
+                    }
+                    
+                    return <p key={index} className="text-gray-600 leading-7 mb-2">{renderLineWithLinks(line)}</p>
                   })
                 })()}
               </div>
