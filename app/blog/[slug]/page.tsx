@@ -125,7 +125,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                       return (
                         <div key={index} className="mt-7 mb-4">
                           <h2 id={`heading-${index}`} className="text-2xl font-bold text-xiaomi-text mb-3 scroll-mt-24">{line.substring(3)}</h2>
-                          <div className="w-full h-px bg-gradient-to-r from-gray-300 via-gray-200 to-transparent"></div>
+                          <div className="w-full h-px bg-gray-200"></div>
                         </div>
                       )
                     }
