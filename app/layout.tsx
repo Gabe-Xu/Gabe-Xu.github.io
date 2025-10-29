@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import ConstructionModal from '@/components/ConstructionModal'
+import ScrollWrapper from '@/components/ScrollWrapper'
 
 export const metadata: Metadata = {
   title: 'Gabriel - 个人博客',
@@ -28,13 +29,15 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body>
-        <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <MobileBottomNav />
-        <ConstructionModal />
+        <ScrollWrapper>
+          <Navbar />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <MobileBottomNav />
+          <ConstructionModal />
+        </ScrollWrapper>
       </body>
     </html>
   )
