@@ -34,7 +34,7 @@
 }
 
 :root {
-  --background: #f9fafb;
+  --background: #fafbfc;
   --foreground: #171717;
   text-autospace: ideograph-alpha ideograph-numeric;
 }
@@ -115,31 +115,31 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9fafb;
+  background: #fafbfc;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #d1d5db;
-  border: 2px solid #f9fafb;
+  border: 2px solid #fafbfc;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff8c00;
-  border: 2px solid #f9fafb;
+  border: 2px solid #fafbfc;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:active {
   background: #f08000;
-  border: 2px solid #f9fafb;
+  border: 2px solid #fafbfc;
   background-clip: padding-box;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #d1d5db #f9fafb;
+  scrollbar-color: #d1d5db #fafbfc;
 }
 
 /* Logo字体 - Century Gothic加粗 */
