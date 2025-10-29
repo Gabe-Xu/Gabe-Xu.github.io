@@ -49,7 +49,8 @@ export default function LinksPage() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white border border-gray-200 p-6 hover:border-xiaomi-orange hover:shadow-lg transition-all flex items-center gap-4"
+                className="group bg-white border border-gray-200 p-6 hover:border-xiaomi-orange hover:shadow-lg transition-all flex items-center gap-4 h-[104px]"
+                title={`${link.name} - ${link.description}`}
               >
                 {/* Avatar */}
                 <div 
@@ -71,7 +72,7 @@ export default function LinksPage() {
                 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-start justify-between mb-1">
                     <h3 className="text-lg font-bold text-xiaomi-text group-hover:text-xiaomi-orange transition-colors truncate">
                       {link.name}
                     </h3>
@@ -84,7 +85,7 @@ export default function LinksPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-1">
                     {link.description}
                   </p>
                 </div>
