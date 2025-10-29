@@ -15,6 +15,13 @@ export default function LinksPage() {
       logo: 'https://avatars.githubusercontent.com/u/71630591',
       logoSize: 'full'
     },
+    { 
+      name: '张洪Heo', 
+      url: 'https://zhheo.com/', 
+      description: '产品设计师、独立开发者，分享设计与科技生活',
+      logo: 'https://bu.dusays.com/2022/12/28/63ac2812183aa.png',
+      logoSize: 'full'
+    },
   ]
 
   return (
