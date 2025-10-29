@@ -22,7 +22,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
               href="/blog" 
-              className="px-12 py-4 bg-xiaomi-orange text-white text-base font-medium hover:bg-xiaomi-orange-hover transition-all duration-200 shadow-lg"
+              className="px-12 py-4 bg-xiaomi-orange text-white text-base font-medium hover:bg-xiaomi-orange-hover transition-all duration-200"
             >
               探索博客
             </Link>
