@@ -62,12 +62,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
             {/* Category - clickable on desktop, non-clickable on mobile */}
-            <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-sm">
+            <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-xs">
               {post.category}
             </span>
             <Link 
               href={`/blog?category=${encodeURIComponent(post.category)}`}
-              className="hidden lg:inline-block text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-sm"
+              className="hidden lg:inline-block text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-xs"
             >
               {post.category}
             </Link>

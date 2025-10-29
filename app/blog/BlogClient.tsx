@@ -269,36 +269,36 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                           e.preventDefault()
                           handleCategoryClick(post.category)
                         }}
-                        className="font-medium transition-all px-2 py-0.5 text-sm text-xiaomi-orange hover:bg-xiaomi-orange/10"
+                        className={`font-medium transition-all px-2 py-0.5 text-xs ${
+                          post.matchType === '匹配分类'
+                            ? 'bg-xiaomi-orange text-white'
+                            : 'text-xiaomi-orange hover:bg-xiaomi-orange/10'
+                        }`}
                       >
                         {post.category}
                       </button>
-                      {(post.isContentMatch || post.matchType) && (
-                        <>
-                  <span>·</span>
-                          <span className="text-blue-500 text-xs">
-                            {post.matchType || '匹配内容'}
-                          </span>
-                        </>
-                      )}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {post.tags.slice(0, 3).map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={(e) => {
-                            e.preventDefault()
-                            handleTagClick(tag)
-                          }}
-                          className={`px-2 py-0.5 text-xs transition-colors ${
-                            selectedTag === tag
-                              ? 'bg-xiaomi-orange text-white'
-                              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                          }`}
-                        >
-                          #{tag}
-                        </button>
-                      ))}
+                      {post.tags.slice(0, 3).map((tag) => {
+                        const isHighlighted = searchQuery && tag.toLowerCase() === searchQuery.toLowerCase()
+                        const containsKeyword = searchQuery && tag.toLowerCase().includes(searchQuery.toLowerCase())
+                        return (
+                          <button
+                            key={tag}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              handleTagClick(tag)
+                            }}
+                            className={`px-2 py-0.5 text-xs transition-colors ${
+                              isHighlighted || selectedTag === tag
+                                ? 'bg-xiaomi-orange text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            }`}
+                          >
+                            #{containsKeyword && !isHighlighted ? highlightText(tag, searchQuery) : tag}
+                          </button>
+                        )
+                      })}
                     </div>
                 </div>
 
