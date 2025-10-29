@@ -73,11 +73,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </Link>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-xiaomi-text mb-4 sm:mb-6 tracking-tight leading-tight">
             {post.title}
           </h1>
 
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-xl text-gray-600 leading-relaxed">
             {post.excerpt}
           </p>
 
@@ -174,32 +174,42 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                         row.split('|').filter(cell => cell.trim())
                       )
                       
-                      return (
-                        <div key={index} className="overflow-x-auto my-6">
-                          <table className="min-w-full border-collapse border border-gray-300">
-                            <thead className="bg-gray-50">
-                              <tr>
-                                {headers.map((header, idx) => (
-                                  <th key={idx} className="border border-gray-300 px-4 py-2 text-left font-semibold text-xiaomi-text">
-                                    {renderCellContent(header.trim())}
-                                  </th>
-                                ))}
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {rows.map((row, rowIdx) => (
-                                <tr key={rowIdx} className="hover:bg-gray-50">
-                                  {row.map((cell, cellIdx) => (
-                                    <td key={cellIdx} className="border border-gray-300 px-4 py-2 text-gray-600">
-                                      {renderCellContent(cell.trim())}
-                                    </td>
-                                  ))}
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      )
+                        return (
+                          <div key={index} className="my-6">
+                            {/* 横向滚动容器 */}
+                            <div className="overflow-x-auto -mx-4 sm:mx-0">
+                              {/* 滚动提示渐变 */}
+                              <div className="relative">
+                                <table className="min-w-full border-collapse border border-gray-300 text-sm sm:text-base">
+                                  <thead className="bg-gray-50">
+                                    <tr>
+                                      {headers.map((header, idx) => (
+                                        <th key={idx} className="border border-gray-300 px-2 sm:px-4 py-1.5 sm:py-2 text-left font-semibold text-xiaomi-text whitespace-nowrap">
+                                          {renderCellContent(header.trim())}
+                                        </th>
+                                      ))}
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {rows.map((row, rowIdx) => (
+                                      <tr key={rowIdx} className="hover:bg-gray-50">
+                                        {row.map((cell, cellIdx) => (
+                                          <td key={cellIdx} className="border border-gray-300 px-2 sm:px-4 py-1.5 sm:py-2 text-gray-600">
+                                            {renderCellContent(cell.trim())}
+                                          </td>
+                                        ))}
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            {/* 移动端滚动提示 */}
+                            <p className="text-xs text-gray-400 mt-2 sm:hidden text-center">
+                              ← 左右滑动查看完整表格 →
+                            </p>
+                          </div>
+                        )
                     }
                     // 处理空行
                     if (line.trim() === '') {
