@@ -88,7 +88,15 @@ export default function Footer() {
           <p className="text-gray-500 text-xs">
             © {currentYear} Gabriel
           </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap gap-4 md:gap-6 mt-4 md:mt-0 justify-center">
+            <a 
+              href="https://icp.gov.moe/?keyword=20259463" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors"
+            >
+              萌ICP备20259463号
+            </a>
             <Link href="/privacy" className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors">
               隐私政策
             </Link>
