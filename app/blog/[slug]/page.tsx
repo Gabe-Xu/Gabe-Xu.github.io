@@ -132,6 +132,53 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     if (line.startsWith('### ')) {
                       return <h3 key={index} id={`heading-${index}`} className="text-xl font-bold text-xiaomi-text mt-6 mb-2 scroll-mt-24">{line.substring(4)}</h3>
                     }
+                    // 处理表格
+                    if (line.startsWith('|')) {
+                      // 查找完整的表格（连续的以|开头的行）
+                      const tableLines = [line]
+                      let i = index + 1
+                      while (i < contentLines.length && contentLines[i].startsWith('|')) {
+                        tableLines.push(contentLines[i])
+                        i++
+                      }
+                      
+                      // 只在第一行时渲染整个表格
+                      if (index === contentLines.findIndex(l => l === line)) {
+                        const headers = tableLines[0].split('|').filter(cell => cell.trim())
+                        const rows = tableLines.slice(2).map(row => 
+                          row.split('|').filter(cell => cell.trim())
+                        )
+                        
+                        return (
+                          <div key={index} className="overflow-x-auto my-6">
+                            <table className="min-w-full border-collapse border border-gray-300">
+                              <thead className="bg-gray-50">
+                                <tr>
+                                  {headers.map((header, idx) => (
+                                    <th key={idx} className="border border-gray-300 px-4 py-2 text-left font-semibold text-xiaomi-text">
+                                      {header.trim()}
+                                    </th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {rows.map((row, rowIdx) => (
+                                  <tr key={rowIdx} className="hover:bg-gray-50">
+                                    {row.map((cell, cellIdx) => (
+                                      <td key={cellIdx} className="border border-gray-300 px-4 py-2 text-gray-600">
+                                        {cell.trim()}
+                                      </td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        )
+                      }
+                      // 跳过已经作为表格一部分渲染的行
+                      return null
+                    }
                     // 处理空行
                     if (line.trim() === '') {
                       return null
