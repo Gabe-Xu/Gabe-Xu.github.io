@@ -323,7 +323,7 @@ function BlogPageContent() {
           <aside className="lg:w-1/3">
             <div className="sticky top-24 space-y-6">
               {/* Search Module - Only visible on desktop */}
-              <div className="hidden lg:block bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">搜索</h3>
                 <div className="relative">
                   <input
@@ -345,7 +345,7 @@ function BlogPageContent() {
               </div>
 
               {/* Categories Module */}
-              <div className="hidden lg:block bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">分类</h3>
 
                 {/* 分类网格 - 可展开/收起 */}
@@ -393,7 +393,7 @@ function BlogPageContent() {
               </div>
 
               {/* Tags Module */}
-              <div className="hidden lg:block bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">标签</h3>
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => {
@@ -418,7 +418,7 @@ function BlogPageContent() {
               </div>
 
               {/* Archives Module */}
-              <div className="hidden lg:block bg-white border border-gray-200 p-6">
+              <div className="hidden lg:block border border-gray-200 p-6">
                 <h3 className="text-lg font-bold text-xiaomi-text mb-4">归档</h3>
                 <div className="space-y-3">
                   {archives.map((yearArchive) => {
