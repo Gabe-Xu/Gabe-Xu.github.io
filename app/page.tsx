@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section - 小米风格：超大字体、极简、留白 */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 pt-14">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center animate-fade-in py-20">
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-xiaomi-text mb-8 tracking-tighter leading-none">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-logo text-xiaomi-text mb-8 tracking-tighter leading-none">
             Gabriel
           </h1>
           <p className="text-2xl sm:text-3xl md:text-4xl text-gray-500 mb-6 font-medium tracking-wide">

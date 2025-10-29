@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'logo': ['"LINE Seed Sans XBd"', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'sans-serif'],
+      },
       colors: {
         xiaomi: {
           orange: '#ff8c00',

@@ -59,7 +59,7 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
           <a
             key={heading.id}
             href={`#${heading.id}`}
-            className={`block text-base transition-colors ${
+            className={`group block text-base transition-colors ${
               activeId === heading.id
                 ? 'text-xiaomi-orange font-bold'
                 : heading.level === 3
@@ -67,7 +67,13 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
                 : 'text-gray-700 font-medium hover:text-xiaomi-orange'
             }`}
           >
-            <span className="inline-block mr-2 text-gray-400">{index + 1}.</span>
+            <span className={`inline-block mr-2 transition-colors ${
+              activeId === heading.id
+                ? 'text-xiaomi-orange'
+                : 'text-gray-400 group-hover:text-xiaomi-orange'
+            }`}>
+              {index + 1}.
+            </span>
             {heading.text}
           </a>
         ))}

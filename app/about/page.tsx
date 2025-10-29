@@ -13,7 +13,7 @@ export default function AboutPage() {
         </div>
 
         {/* Profile Section */}
-        <div className="mb-20 animate-slide-up">
+        <div className="mb-12 md:mb-20 animate-slide-up">
           <div className="w-32 h-32 mb-8 relative">
             <img
               src="/avatar.jpg"
@@ -25,14 +25,14 @@ export default function AboutPage() {
               <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse-slow"></div>
             </div>
           </div>
-          <h2 className="text-4xl font-black text-xiaomi-text mb-4 tracking-tight">Gabriel</h2>
+          <h2 className="text-4xl font-black font-logo text-xiaomi-text mb-4 tracking-tight">Gabriel</h2>
           <p className="text-xl text-gray-600">
             全栈开发者 | UI/UX设计师 | 技术写作者
           </p>
         </div>
 
         {/* Bio */}
-        <div className="mb-20 animate-slide-up">
+        <div className="mb-12 md:mb-20 animate-slide-up">
           <h2 className="text-4xl font-black text-xiaomi-text mb-8 tracking-tight">我的故事</h2>
           <div className="space-y-6 text-gray-600 text-lg max-w-4xl">
             <p>
@@ -48,7 +48,7 @@ export default function AboutPage() {
         </div>
 
         {/* Skills */}
-        <div className="mb-20 animate-slide-up">
+        <div className="mb-12 md:mb-20 animate-slide-up">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">技能专长</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
             <div className="p-10 bg-gray-50 hover:bg-gray-100 transition-colors">
@@ -98,7 +98,7 @@ export default function AboutPage() {
         </div>
 
         {/* Experience Timeline */}
-        <div className="mb-20 animate-slide-up">
+        <div className="mb-12 md:mb-20 animate-slide-up">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">经历时间线</h2>
           <div className="space-y-12 border-l-2 border-gray-200 pl-8">
             <div className="relative">

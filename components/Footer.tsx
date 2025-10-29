@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-black text-xiaomi-text mb-4 tracking-tight">Gabriel</h3>
+            <h3 className="text-2xl font-black font-logo text-xiaomi-text mb-4 tracking-tight">Gabriel</h3>
             <p className="text-gray-500 mb-4 max-w-md text-sm">
               分享技术、设计与生活的思考<br />持续学习，不断进步
             </p>

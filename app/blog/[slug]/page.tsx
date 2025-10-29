@@ -162,7 +162,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-xiaomi-text mb-2">Gabriel</h3>
+              <h3 className="text-2xl font-bold font-logo text-xiaomi-text mb-2">Gabriel</h3>
               <p className="text-gray-600 mb-4">
                 热爱技术的开发者，专注于前端开发和UI/UX设计。喜欢分享知识，记录成长。
               </p>
