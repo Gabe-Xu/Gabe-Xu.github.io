@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 select-none">
             <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
             <span className="text-xl font-bold font-logo text-xiaomi-text tracking-tight">Gabriel</span>
           </Link>

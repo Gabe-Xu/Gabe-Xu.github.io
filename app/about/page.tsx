@@ -14,7 +14,7 @@ export default function AboutPage() {
 
         {/* Profile Section */}
         <div className="mb-12 md:mb-20 animate-slide-up">
-          <div className="w-32 h-32 mb-8 relative">
+          <div className="w-32 h-32 mb-8 relative select-none">
             <img
               src="/avatar.jpg"
               alt="Gabriel"

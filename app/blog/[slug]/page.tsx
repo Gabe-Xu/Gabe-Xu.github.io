@@ -149,21 +149,21 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         {/* Author Section */}
         <div className="mt-16 pt-12 border-t border-gray-200">
-          <div className="flex items-start gap-6">
-            <div className="w-20 h-20 relative flex-shrink-0">
+          <div className="flex items-center gap-7">
+            <div className="w-24 h-24 relative flex-shrink-0 select-none">
               <img
                 src="/avatar.jpg"
                 alt="Gabriel"
                 className="w-full h-full object-cover rounded-full"
               />
               {/* 在线状态指示器 */}
-              <div className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-white rounded-full flex items-center justify-center">
-                <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse-slow"></div>
+              <div className="absolute bottom-0.5 right-0.5 w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse-slow"></div>
               </div>
             </div>
-            <div>
+            <div className="flex-1">
               <h3 className="text-2xl font-bold font-logo text-xiaomi-text mb-2">Gabriel</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 leading-snug">
                 热爱技术的开发者，专注于前端开发和UI/UX设计。喜欢分享知识，记录成长。
               </p>
               <Link
