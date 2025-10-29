@@ -59,7 +59,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         {/* Article Header */}
         <header className="mb-12 animate-fade-in lg:max-w-[66.666667%]">
-          <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
+          <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
             {/* Category - clickable on desktop, non-clickable on mobile */}
             <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-xs">
@@ -105,7 +105,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Main Content */}
           <div className="lg:w-2/3">
             {/* Article Content */}
-            <div id="article-content" className="animate-slide-up bg-white border border-gray-200 p-8">
+            <div id="article-content" className="animate-slide-up bg-white border-0 lg:border lg:border-gray-200 p-0 lg:p-8">
               <div className="text-xiaomi-text [&>*:first-child]:!mt-0 [&>*:last-child]:!mb-0">
                 {(() => {
                   const contentLines = post.content.split('\n')

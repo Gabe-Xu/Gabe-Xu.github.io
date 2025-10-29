@@ -8,6 +8,16 @@ import ConstructionModal from '@/components/ConstructionModal'
 export const metadata: Metadata = {
   title: 'Gabriel - 个人博客',
   description: '分享技术、思考与生活',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Gabriel',
+  },
 }
 
 export default function RootLayout({

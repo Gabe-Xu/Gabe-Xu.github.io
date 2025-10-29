@@ -262,7 +262,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
             >
                   {/* Header: Date, Category, Tags */}
                   <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <div className="flex items-center gap-2 text-xs text-gray-400">
                   <time dateTime={post.date}>{post.date}</time>
                       <button
                         onClick={(e) => {
@@ -270,7 +270,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                           handleCategoryClick(post.category)
                         }}
                         className={`font-medium transition-all px-2 py-0.5 text-xs ${
-                          post.matchType === '匹配分类'
+                          post.matchType === '匹配分类' || selectedCategory === post.category
                             ? 'bg-xiaomi-orange text-white'
                             : 'text-xiaomi-orange hover:bg-xiaomi-orange/10'
                         }`}
