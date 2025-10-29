@@ -85,10 +85,11 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-xs">
-            © {currentYear} Gabriel
-          </p>
-          <div className="flex flex-wrap gap-4 md:gap-6 mt-4 md:mt-0 justify-center">
+          <div className="flex flex-wrap items-center gap-2 md:gap-4">
+            <p className="text-gray-500 text-xs">
+              © {currentYear} Gabriel
+            </p>
+            <span className="text-gray-300 hidden md:inline">·</span>
             <a 
               href="https://icp.gov.moe/?keyword=20259463" 
               target="_blank" 
@@ -97,6 +98,8 @@ export default function Footer() {
             >
               萌ICP备20259463号
             </a>
+          </div>
+          <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors">
               隐私政策
             </Link>
