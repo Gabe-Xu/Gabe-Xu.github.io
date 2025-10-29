@@ -17,7 +17,7 @@ export default function LinksPage() {
     },
     { 
       name: '张洪Heo', 
-      url: 'https://zhheo.com/', 
+      url: 'https://blog.zhheo.com/', 
       description: '产品设计师、独立开发者，分享设计与科技生活',
       logo: 'https://bu.dusays.com/2022/12/28/63ac2812183aa.png',
       logoSize: 'full'
