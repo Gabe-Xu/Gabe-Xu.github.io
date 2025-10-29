@@ -190,6 +190,27 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Main Content - Blog Posts List */}
           <div className="lg:w-2/3">
+            {/* Search Box - 移动端显示 */}
+            <div className="mb-6 lg:hidden">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="搜索文章..."
+                  className="w-full px-4 py-3 bg-white border border-gray-200 focus:border-xiaomi-orange focus:outline-none focus:ring-1 focus:ring-xiaomi-orange text-sm"
+                />
+                <svg
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+
             {/* Active Filters */}
             {(searchQuery || selectedCategory || selectedTag || selectedArchive) && (
               <div className="mb-6 p-4 bg-white border border-gray-200">
@@ -303,10 +324,10 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
             )}
           </div>
 
-          {/* Sidebar */}
-          <aside className="lg:w-1/3">
+          {/* Sidebar - 仅桌面端显示 */}
+          <aside className="hidden lg:block lg:w-1/3">
             <div className="sticky top-24 space-y-6">
-              {/* Search Box */}
+              {/* Search Box - 桌面端显示 */}
               <div className="relative">
                 <input
                   type="text"
