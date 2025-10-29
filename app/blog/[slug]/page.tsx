@@ -134,6 +134,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     }
                     // 处理表格
                     if (line.startsWith('|')) {
+                      // 如果前一行也是表格，说明当前行是表格的一部分，跳过
+                      if (index > 0 && contentLines[index - 1].startsWith('|')) {
+                        return null
+                      }
+                      
                       // 查找完整的表格（连续的以|开头的行）
                       const tableLines = [line]
                       let i = index + 1
@@ -142,42 +147,59 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                         i++
                       }
                       
-                      // 只在第一行时渲染整个表格
-                      if (index === contentLines.findIndex(l => l === line)) {
-                        const headers = tableLines[0].split('|').filter(cell => cell.trim())
-                        const rows = tableLines.slice(2).map(row => 
-                          row.split('|').filter(cell => cell.trim())
-                        )
+                      // 渲染表格内容，支持粗体
+                      const renderCellContent = (text: string) => {
+                        const parts = []
+                        const boldRegex = /\*\*([^*]+)\*\*/g
+                        let lastIndex = 0
+                        let match
                         
-                        return (
-                          <div key={index} className="overflow-x-auto my-6">
-                            <table className="min-w-full border-collapse border border-gray-300">
-                              <thead className="bg-gray-50">
-                                <tr>
-                                  {headers.map((header, idx) => (
-                                    <th key={idx} className="border border-gray-300 px-4 py-2 text-left font-semibold text-xiaomi-text">
-                                      {header.trim()}
-                                    </th>
+                        while ((match = boldRegex.exec(text)) !== null) {
+                          if (match.index > lastIndex) {
+                            parts.push(text.substring(lastIndex, match.index))
+                          }
+                          parts.push(<strong key={match.index}>{match[1]}</strong>)
+                          lastIndex = match.index + match[0].length
+                        }
+                        
+                        if (lastIndex < text.length) {
+                          parts.push(text.substring(lastIndex))
+                        }
+                        
+                        return parts.length > 0 ? parts : text
+                      }
+                      
+                      const headers = tableLines[0].split('|').filter(cell => cell.trim())
+                      const rows = tableLines.slice(2).map(row => 
+                        row.split('|').filter(cell => cell.trim())
+                      )
+                      
+                      return (
+                        <div key={index} className="overflow-x-auto my-6">
+                          <table className="min-w-full border-collapse border border-gray-300">
+                            <thead className="bg-gray-50">
+                              <tr>
+                                {headers.map((header, idx) => (
+                                  <th key={idx} className="border border-gray-300 px-4 py-2 text-left font-semibold text-xiaomi-text">
+                                    {renderCellContent(header.trim())}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {rows.map((row, rowIdx) => (
+                                <tr key={rowIdx} className="hover:bg-gray-50">
+                                  {row.map((cell, cellIdx) => (
+                                    <td key={cellIdx} className="border border-gray-300 px-4 py-2 text-gray-600">
+                                      {renderCellContent(cell.trim())}
+                                    </td>
                                   ))}
                                 </tr>
-                              </thead>
-                              <tbody>
-                                {rows.map((row, rowIdx) => (
-                                  <tr key={rowIdx} className="hover:bg-gray-50">
-                                    {row.map((cell, cellIdx) => (
-                                      <td key={cellIdx} className="border border-gray-300 px-4 py-2 text-gray-600">
-                                        {cell.trim()}
-                                      </td>
-                                    ))}
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        )
-                      }
-                      // 跳过已经作为表格一部分渲染的行
-                      return null
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )
                     }
                     // 处理空行
                     if (line.trim() === '') {

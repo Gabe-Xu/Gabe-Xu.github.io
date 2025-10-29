@@ -36,6 +36,7 @@
 :root {
   --background: #f9fafb;
   --foreground: #171717;
+  text-autospace: ideograph-alpha ideograph-numeric;
 }
 
 * {
@@ -80,6 +81,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  text-autospace: ideograph-alpha ideograph-numeric;
 }
 
 /* LINE Seed Sans 字体垂直对齐优化 - 保持简单 */

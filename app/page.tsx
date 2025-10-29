@@ -39,7 +39,7 @@ export default function Home() {
       {/* 特色内容区 - 小米风格：大图配简短文字 */}
       <section className="py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {/* 卡片1 */}
             <div className="group relative overflow-hidden bg-gray-100 aspect-square">
               <div className="absolute inset-0 bg-xiaomi-orange flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
