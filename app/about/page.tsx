@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="mb-12 md:mb-20 animate-slide-up">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">技能专长</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <div className="p-10 bg-gray-50 hover:bg-gray-100 transition-colors">
+            <div className="p-10 bg-gray-100 hover:bg-gray-200 transition-colors">
               <h3 className="text-2xl font-bold text-xiaomi-text mb-6">前端开发</h3>
               <div className="flex flex-wrap gap-2">
                 {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML/CSS'].map((skill) => (
@@ -84,7 +84,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-10 bg-gray-50 hover:bg-gray-100 transition-colors">
+            <div className="p-10 bg-gray-100 hover:bg-gray-200 transition-colors">
               <h3 className="text-2xl font-bold text-xiaomi-text mb-6">开发工具</h3>
               <div className="flex flex-wrap gap-2">
                 {['Git', 'VS Code', 'Docker', 'Vercel', 'GitHub'].map((skill) => (
@@ -158,7 +158,7 @@ export default function AboutPage() {
             </div>
 
             {/* Social Media */}
-            <div className="bg-gray-50 p-10">
+            <div className="bg-gray-100 p-10">
               <div className="w-12 h-12 bg-xiaomi-dark flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

@@ -6,7 +6,7 @@ export default function Home() {
   const featuredPosts = posts.slice(0, 3)
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-[#fafbfc]">
       {/* Hero Section - 小米风格：超大字体、极简、留白 */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 pt-14">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center animate-fade-in py-20">
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* 特色内容区 - 小米风格：大图配简短文字 */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-[#fafbfc]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {/* 卡片1 */}
