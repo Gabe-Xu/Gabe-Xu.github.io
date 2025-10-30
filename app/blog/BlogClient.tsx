@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
 interface Post {
+  hash: string
   slug: string
   title: string
   date: string
@@ -129,7 +130,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
       }
     }
     
-    return { ...post, snippet, isContentMatch, matchType }
+    return { ...post, snippet, isContentMatch, matchType } as Post & { snippet: string; isContentMatch: boolean; matchType: string }
   })
 
   // 更新URL参数
@@ -304,7 +305,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
 
                   {/* Title */}
                   <h2 className="text-xl font-bold text-xiaomi-text mb-2 group-hover:text-xiaomi-orange transition-colors leading-tight">
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.hash}`}>
                       {searchQuery ? highlightText(post.title, searchQuery) : post.title}
                   </Link>
                 </h2>

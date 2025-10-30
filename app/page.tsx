@@ -96,13 +96,13 @@ export default function Home() {
             {featuredPosts.map((post) => (
               <Link 
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.hash}`}
                 className="group bg-white border border-gray-200 p-6 hover:border-xiaomi-orange hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <div className="flex items-center gap-2 text-xs text-gray-400">
                     <span>{post.date}</span>
-                    <span className="px-2 py-0.5 text-xiaomi-orange text-sm font-medium">{post.category}</span>
+                    <span className="px-2 py-0.5 text-xiaomi-orange text-xs font-medium">{post.category}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.slice(0, 2).map((tag) => (

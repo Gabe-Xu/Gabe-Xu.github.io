@@ -1,17 +1,17 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getPostBySlug, getAllPosts } from '@/lib/posts'
+import { getPostByHash, getAllPosts } from '@/lib/posts'
 import TableOfContents from '@/components/TableOfContents'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
   return posts.map((post) => ({
-    slug: post.slug,
+    hash: post.hash,
   }))
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug)
+export default function BlogPost({ params }: { params: { hash: string } }) {
+  const post = getPostByHash(params.hash)
 
   if (!post) {
     notFound()
@@ -313,7 +313,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path strokeLinecap="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
             </div>
@@ -323,3 +323,4 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     </article>
   )
 }
+

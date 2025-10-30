@@ -1,8 +1,15 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import crypto from 'crypto'
+
+// 生成文件内容的哈希值（用于URL）
+function generateHash(content: string): string {
+  return crypto.createHash('md5').update(content).digest('hex').substring(0, 8)
+}
 
 export interface Post {
+  hash: string
   slug: string
   title: string
   date: string
@@ -24,12 +31,16 @@ export function getAllPosts(): Post[] {
   const allPosts = fileNames
     .filter(fileName => fileName.endsWith('.md'))
     .map(fileName => {
-      const slug = fileName.replace(/\.md$/, '')
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data, content } = matter(fileContents)
+      
+      // 生成文章哈希值（仅基于标题）
+      const hash = generateHash(data.title || fileName)
+      const slug = hash
 
       return {
+        hash,
         slug,
         title: data.title || '',
         date: typeof data.date === 'string' ? data.date : (data.date instanceof Date ? data.date.toISOString().split('T')[0] : ''),
@@ -43,14 +54,17 @@ export function getAllPosts(): Post[] {
   return allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export function getPostBySlug(slug: string): Post | undefined {
+export function getPostByHash(hash: string): Post | undefined {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`)
+    const fullPath = path.join(postsDirectory, `${hash}.md`)
+    if (!fs.existsSync(fullPath)) return undefined
+    
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
     return {
-      slug,
+      hash,
+      slug: hash,
       title: data.title || '',
       date: typeof data.date === 'string' ? data.date : (data.date instanceof Date ? data.date.toISOString().split('T')[0] : ''),
       category: data.category || '未分类',

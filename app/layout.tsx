@@ -27,6 +27,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
+      <head>
+        <link 
+          rel="preload" 
+          href="/fonts/LINESeedSans_XBd.ttf" 
+          as="font" 
+          type="font/ttf" 
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Navbar />
         <main className="min-h-screen">
@@ -39,4 +48,3 @@ export default function RootLayout({
     </html>
   )
 }
-

@@ -24,7 +24,13 @@
   /* 垂直对齐调整 */
   display: inline-flex;
   align-items: center;
-  transform: translateY(0.15em);
+}
+
+/* 只有LINE Seed Sans字体加载成功时才下移 */
+@supports (font-family: 'LINE Seed Sans XBd') {
+  .font-logo {
+    transform: translateY(0.15em);
+  }
 }
 
 /* Tailwind font-black 使用 Extra Bold - 增加行高 */
@@ -67,6 +73,12 @@ p, span, div, a, button, input, textarea {
 /* 标题保持设计效果，但不会过度紧缩 */
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
+  text-autospace: ideograph-alpha ideograph-numeric;
+}
+
+/* 段落文本也应用盘古之白 */
+p {
+  text-autospace: ideograph-alpha ideograph-numeric;
 }
 
 body {
@@ -104,6 +116,22 @@ a {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* 下拉菜单动画 - 从上往下滑出 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out forwards;
 }
 
 html {

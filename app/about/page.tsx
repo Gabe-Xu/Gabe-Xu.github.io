@@ -13,7 +13,7 @@ export default function AboutPage() {
         </div>
 
         {/* Profile Section */}
-        <div className="mb-12 md:mb-20 animate-slide-up">
+        <div id="profile" className="mb-12 md:mb-20 animate-slide-up scroll-mt-20">
           <div className="w-32 h-32 mb-8 relative select-none">
             <img
               src="/avatar.jpg"
@@ -48,7 +48,7 @@ export default function AboutPage() {
         </div>
 
         {/* Skills */}
-        <div className="mb-12 md:mb-20 animate-slide-up">
+        <div id="skills" className="mb-12 md:mb-20 animate-slide-up scroll-mt-20">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">技能专长</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             <div className="p-10 bg-gray-100">
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </div>
 
         {/* Contact Information */}
-        <div className="animate-slide-up">
+        <div id="contact" className="animate-slide-up scroll-mt-20">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">联系方式</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Email */}
