@@ -69,14 +69,14 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.zhihu.com/people/gabexu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-100 hover:bg-xiaomi-orange flex items-center justify-center transition-colors group"
-                aria-label="LinkedIn"
+                aria-label="知乎"
               >
                 <svg className="w-5 h-5 text-xiaomi-text group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  <path d="M5.721 0C4.12 0 2.82 1.3 2.82 2.902v18.196C2.82 22.7 4.12 24 5.72 24h12.56c1.6 0 2.9-1.3 2.9-2.902V2.902C21.18 1.3 19.88 0 18.28 0H5.72zm2.453 3.068h5.652v11.073l1.708-.854.827 1.655-2.76 1.379-.827-.827V3.068h1.4zm-2.787 12.19h7.117v1.241H5.387v-1.24zm7.291-9.043V4.31H7.026v1.905h5.652zm-5.652 5.652h5.652v1.241H7.026v-1.24z"/>
                 </svg>
               </a>
             </div>

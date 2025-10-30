@@ -47,5 +47,5 @@ DPI缩放问题：在150%或200%等缩放下，若无高分辨率版本会变模
 
 ## 如何把PNG打包成ICO
 
-[ICO converter](https://www.icoconverter.com/)支持PNG、JPEG、GIF、BMP等多种输入格式，提供多种输出尺寸选择（16×16、32×32、48×48、64×64、256×256），支持位深度设置（8位、32位），界面简洁。
+[ICO converter](https://www.icoconverter.com/) 支持PNG、JPEG、GIF、BMP等多种输入格式，提供多种输出尺寸选择（16×16、32×32、48×48、64×64、256×256），支持位深度设置（8位、32位），界面简洁。
 

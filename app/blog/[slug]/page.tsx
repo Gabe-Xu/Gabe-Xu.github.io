@@ -19,10 +19,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
   // 中英文间自动添加空格（盘古之白）
   const addSpacing = (text: string): string => {
-    // 中文字符后接英文/数字
-    text = text.replace(/([\u4e00-\u9fa5])([a-zA-Z0-9])/g, '$1 $2')
-    // 英文/数字后接中文字符
-    text = text.replace(/([a-zA-Z0-9])([\u4e00-\u9fa5])/g, '$1 $2')
+    // 中文字符后接英文/数字/点号等
+    text = text.replace(/([\u4e00-\u9fa5])([a-zA-Z0-9@&%\.\-+])/g, '$1 $2')
+    // 英文/数字/点号等后接中文字符
+    text = text.replace(/([a-zA-Z0-9@&%\.\-+])([\u4e00-\u9fa5])/g, '$1 $2')
+    // 百分号后接中文（特殊处理）
+    text = text.replace(/(%)([\u4e00-\u9fa5])/g, '$1 $2')
     return text
   }
 
