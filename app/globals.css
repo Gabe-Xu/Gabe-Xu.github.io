@@ -108,87 +108,9 @@ a {
   }
 }
 
-/* ===== SimpleBar 自定义滚动条 - 完全控制 ===== */
-
-/* SimpleBar轨道 */
-.simplebar-track.simplebar-vertical {
-  width: 8px;
-  background: transparent;
-  right: 2px;
-  margin: 0;
-}
-
-.simplebar-track.simplebar-horizontal {
-  height: 8px;
-  background: transparent;
-  bottom: 2px;
-  margin: 0;
-}
-
-/* 滚动条主体 - 关键！必须设置宽度 */
-.simplebar-scrollbar {
-  cursor: pointer;
-  width: 8px;
-}
-
-/* 默认灰色矩形 */
-.simplebar-scrollbar::before {
-  background: #f3f4f6;
-  border-radius: 0;
-  transition: background 0.2s ease;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: 1;
-}
-
-/* hover时变橙 - 双重选择器确保生效 */
-.simplebar-scrollbar:hover::before,
-.simplebar-track.simplebar-vertical:hover .simplebar-scrollbar::before {
-  background: #ff8c00;
-}
-
-/* 拖动时保持橙色 */
-.simplebar-scrollbar.simplebar-visible::before {
-  background: #ff8c00;
-}
-
-/* 隐藏原生滚动条 */
-.simplebar-content-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
 html {
-  overflow: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ff8c00;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: #ff8c00;
-}
-
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* Logo字体 - Century Gothic加粗 */

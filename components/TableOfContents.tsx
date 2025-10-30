@@ -39,10 +39,40 @@ export default function TableOfContents({ headings }: TableOfContentsProps) {
       }
     }
 
+    // 监听多个可能的滚动源
     window.addEventListener('scroll', handleScroll, { passive: true })
+    document.addEventListener('scroll', handleScroll, { passive: true })
+    
+    // 使用 Intersection Observer 作为备选方案
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      {
+        rootMargin: '-100px 0px -66% 0px',
+        threshold: [0, 0.5, 1]
+      }
+    )
+
+    // 观察所有标题
+    headings.forEach(heading => {
+      const element = document.getElementById(heading.id)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
     handleScroll() // 初始检查
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('scroll', handleScroll)
+      observer.disconnect()
+    }
   }, [headings])
 
   if (headings.length === 0) {
