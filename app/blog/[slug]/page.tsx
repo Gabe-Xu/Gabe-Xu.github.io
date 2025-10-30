@@ -17,6 +17,15 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  // 中英文间自动添加空格（盘古之白）
+  const addSpacing = (text: string): string => {
+    // 中文字符后接英文/数字
+    text = text.replace(/([\u4e00-\u9fa5])([a-zA-Z0-9])/g, '$1 $2')
+    // 英文/数字后接中文字符
+    text = text.replace(/([a-zA-Z0-9])([\u4e00-\u9fa5])/g, '$1 $2')
+    return text
+  }
+
   // 提取标题作为目录
   const lines = post.content.split('\n')
   let hasSkippedH1 = false
@@ -30,9 +39,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     }
     
     if (line.startsWith('## ')) {
-      headings.push({ id: `heading-${index}`, text: line.substring(3), level: 2 })
+      headings.push({ id: `heading-${index}`, text: addSpacing(line.substring(3)), level: 2 })
     } else if (line.startsWith('### ')) {
-      headings.push({ id: `heading-${index}`, text: line.substring(4), level: 3 })
+      headings.push({ id: `heading-${index}`, text: addSpacing(line.substring(4)), level: 3 })
     }
   })
 
@@ -119,18 +128,18 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     
                     // 处理标题
                     if (line.startsWith('# ')) {
-                      return <h1 key={index} id={`heading-${index}`} className="text-3xl font-black text-xiaomi-text mt-8 mb-3 tracking-tight scroll-mt-24">{line.substring(2)}</h1>
+                      return <h1 key={index} id={`heading-${index}`} className="text-3xl font-black text-xiaomi-text mt-8 mb-3 tracking-tight scroll-mt-24">{addSpacing(line.substring(2))}</h1>
                     }
                     if (line.startsWith('## ')) {
                       return (
                         <div key={index} className="mt-7 mb-4">
-                          <h2 id={`heading-${index}`} className="text-2xl font-bold text-xiaomi-text mb-2 scroll-mt-24">{line.substring(3)}</h2>
+                          <h2 id={`heading-${index}`} className="text-2xl font-bold text-xiaomi-text mb-2 scroll-mt-24">{addSpacing(line.substring(3))}</h2>
                           <div className="w-full h-px bg-gray-200"></div>
                         </div>
                       )
                     }
                     if (line.startsWith('### ')) {
-                      return <h3 key={index} id={`heading-${index}`} className="text-xl font-bold text-xiaomi-text mt-6 mb-2 scroll-mt-24">{line.substring(4)}</h3>
+                      return <h3 key={index} id={`heading-${index}`} className="text-xl font-bold text-xiaomi-text mt-6 mb-2 scroll-mt-24">{addSpacing(line.substring(4))}</h3>
                     }
                     // 处理表格
                     if (line.startsWith('|')) {
@@ -149,6 +158,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                       
                       // 渲染表格内容，支持粗体
                       const renderCellContent = (text: string) => {
+                        // 先添加中英文间距
+                        text = addSpacing(text)
+                        
                         const parts = []
                         const boldRegex = /\*\*([^*]+)\*\*/g
                         let lastIndex = 0
@@ -217,6 +229,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     }
                     // 普通段落 - 支持 Markdown 链接
                     const renderLineWithLinks = (text: string) => {
+                      // 先添加中英文间距
+                      text = addSpacing(text)
+                      
                       // 匹配 Markdown 链接格式：[文本](URL)
                       const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
                       const parts = []
