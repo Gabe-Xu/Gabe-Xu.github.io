@@ -174,7 +174,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
   }
 
   return (
-    <div className="min-h-screen bg-[#fafbfc] pt-14 pb-32">
+    <article className="min-h-screen bg-[#fafbfc] pt-14 pb-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="pt-12 md:pt-20 pb-8 md:pb-12 animate-fade-in">
@@ -507,11 +507,11 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                   })}
                 </div>
               </div>
-              </div>
+            </div>
           </aside>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
