@@ -26,12 +26,7 @@
   align-items: center;
 }
 
-/* 只有LINE Seed Sans字体加载成功时才下移 */
-@supports (font-family: 'LINE Seed Sans XBd') {
-  .font-logo {
-    transform: translateY(0.15em);
-  }
-}
+/* LINE Seed Sans 字体垂直对齐优化 - 移除偏移 */
 
 /* Tailwind font-black 使用 Extra Bold - 增加行高 */
 .font-black {
