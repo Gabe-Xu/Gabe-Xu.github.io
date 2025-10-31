@@ -20,19 +20,19 @@ export default function TermsPage() {
             本网站上的所有内容，包括但不限于文本、图像、代码和设计，均受版权保护。未经明确许可，您不得复制、分发或修改这些内容。
           </p>
           <p className="text-gray-600 leading-7 mb-2">您可以：</p>
-          <ul className="list-none pl-6 text-gray-600 leading-7 space-y-1 mb-2">
-            <li>• 为个人学习目的查看和阅读内容</li>
-            <li>• 在注明出处的情况下引用部分内容</li>
-            <li>• 分享文章链接到社交媒体</li>
+          <ul className="list-disc pl-6 text-gray-600 leading-7 space-y-1 mb-2">
+            <li>为个人学习目的查看和阅读内容</li>
+            <li>在注明出处的情况下引用部分内容</li>
+            <li>分享文章链接到社交媒体</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-xiaomi-text mt-8 mb-3">3. 用户行为</h2>
           <p className="text-gray-600 leading-7 mb-2">使用本网站时，您同意：</p>
-          <ul className="list-none pl-6 text-gray-600 leading-7 space-y-1 mb-2">
-            <li>• 不从事任何非法活动</li>
-            <li>• 不试图破坏网站的安全或功能</li>
-            <li>• 不发送垃圾邮件或恶意内容</li>
-            <li>• 尊重他人的隐私和权利</li>
+          <ul className="list-disc pl-6 text-gray-600 leading-7 space-y-1 mb-2">
+            <li>不从事任何非法活动</li>
+            <li>不试图破坏网站的安全或功能</li>
+            <li>不发送垃圾邮件或恶意内容</li>
+            <li>尊重他人的隐私和权利</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-xiaomi-text mt-8 mb-3">4. 免责声明</h2>

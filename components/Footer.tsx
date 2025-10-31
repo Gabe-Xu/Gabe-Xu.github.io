@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 pb-24 md:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
+        <div className="flex flex-wrap items-start justify-between mb-12">
+          {/* Gabriel - 左对齐 */}
           <div>
             <h3 className="text-2xl font-black font-logo text-xiaomi-text mb-4 tracking-tight">Gabriel</h3>
             <p className="text-gray-500 mb-4 max-w-md text-sm">
@@ -15,51 +15,63 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation Links */}
-          <div>
-            <h4 className="text-xiaomi-text font-bold mb-4 text-sm">导航</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  首页
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  博客
-                </Link>
-              </li>
-            </ul>
+          {/* 中间四个卡片 - 居中对齐 */}
+          <div className="flex gap-14">
+            {/* 首页 */}
+            <div className="w-24">
+              <Link href="/" className="text-xiaomi-text font-bold mb-4 text-sm block hover:text-xiaomi-orange transition-colors">
+                首页
+              </Link>
+            </div>
+
+            {/* 博客 */}
+            <div className="w-24">
+              <Link href="/blog" className="text-xiaomi-text font-bold mb-4 text-sm block hover:text-xiaomi-orange transition-colors">
+                博客
+              </Link>
+            </div>
+
+            {/* 链接 */}
+            <div className="w-24">
+              <h4 className="text-xiaomi-text font-bold mb-4 text-sm">链接</h4>
+              <ul className="space-y-2.5">
+                <li>
+                  <Link href="/tools" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                    常用工具
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/links" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                    友情链接
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* 关于 */}
+            <div className="w-24">
+              <h4 className="text-xiaomi-text font-bold mb-4 text-sm">关于</h4>
+              <ul className="space-y-2.5">
+                <li>
+                  <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                    个人简介
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/equipment" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                    我的装备
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about#contact" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                    联系方式
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* More Links */}
-          <div>
-            <h4 className="text-xiaomi-text font-bold mb-4 text-sm">更多</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/tools" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  常用工具
-                </Link>
-              </li>
-              <li>
-                <Link href="/links" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  友情链接
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  关于我
-                </Link>
-              </li>
-              <li>
-                <Link href="/equipment" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  我的装备
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social */}
+          {/* 关注我 - 右对齐 */}
           <div>
             <h4 className="text-xiaomi-text font-bold mb-4 text-sm">关注我</h4>
             <div className="flex space-x-3">
