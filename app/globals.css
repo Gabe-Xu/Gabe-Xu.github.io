@@ -26,10 +26,10 @@
   align-items: center;
 }
 
-/* PC和安卓上移Gabriel字体，iOS不变 */
+/* PC和安卓调整Gabriel字体，iOS不变 */
 @supports (font-family: 'LINE Seed Sans XBd') {
   .font-logo {
-    transform: translateY(0.05em);
+    transform: translateY(0.12em);
   }
 }
 
