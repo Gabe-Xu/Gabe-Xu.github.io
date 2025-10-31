@@ -25,23 +25,20 @@ export default function LinksPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-16">
+    <div className="bg-gradient-to-b from-white to-gray-50 pt-14 pb-16">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="pt-12 md:pt-20 pb-8 md:pb-16 animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-3 sm:mb-6 tracking-tight">
-            链接
+            友情链接
           </h1>
           <p className="text-xl text-gray-600">
-            友情链接、常用工具和推荐资源
+            与我志同道合的朋友们
           </p>
         </div>
 
         {/* Friend Links Section */}
         <div className="animate-slide-up">
-          <h2 className="text-3xl font-black text-xiaomi-text mb-8 tracking-tight">
-            友情链接
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {friendLinks.map((link) => (
               <a

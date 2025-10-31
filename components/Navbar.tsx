@@ -71,16 +71,6 @@ export default function Navbar() {
                       : 'bg-white border-gray-100 shadow-2xl'
                   }`}>
                     <Link 
-                      href="/links" 
-                      className="flex items-center gap-2.5 px-4 py-3 text-sm text-xiaomi-text hover:bg-xiaomi-orange hover:text-white transition-all group"
-                    >
-                      <svg className="w-4 h-4 flex-shrink-0 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                      <span>友情链接</span>
-                    </Link>
-                    <div className="h-px bg-gray-100"></div>
-                    <Link 
                       href="/tools" 
                       className="flex items-center gap-2.5 px-4 py-3 text-sm text-xiaomi-text hover:bg-xiaomi-orange hover:text-white transition-all group"
                     >
@@ -89,6 +79,16 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       <span>常用工具</span>
+                    </Link>
+                    <div className="h-px bg-gray-100"></div>
+                    <Link 
+                      href="/links" 
+                      className="flex items-center gap-2.5 px-4 py-3 text-sm text-xiaomi-text hover:bg-xiaomi-orange hover:text-white transition-all group"
+                    >
+                      <svg className="w-4 h-4 flex-shrink-0 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <span>友情链接</span>
                     </Link>
                   </div>
                 </div>

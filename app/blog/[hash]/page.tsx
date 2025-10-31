@@ -73,13 +73,19 @@ export default function BlogPost({ params }: { params: { hash: string } }) {
           <div className="flex items-center gap-2 text-xs text-gray-400 mb-4">
             <time dateTime={post.date}>{post.date}</time>
             {/* Category - clickable on desktop, non-clickable on mobile */}
-            <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-xs">
+            <span className="lg:hidden text-xiaomi-orange font-medium px-2 py-0.5 text-xs flex items-center gap-1">
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 1024 1024">
+                <path d="M132.266667 810.666667h759.466666a4.266667 4.266667 0 0 0 4.266667-4.266667V345.6a4.266667 4.266667 0 0 0-4.266667-4.266667h-335.36a3.925333 3.925333 0 0 1-2.986666-1.28l-125.44-125.44A4.224 4.224 0 0 0 424.96 213.333333H132.266667a4.266667 4.266667 0 0 0-4.266667 4.266667v588.8a4.266667 4.266667 0 0 0 4.266667 4.266667z" />
+              </svg>
               {post.category}
             </span>
             <Link 
               href={`/blog?category=${encodeURIComponent(post.category)}`}
-              className="hidden lg:inline-block text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-xs"
+              className="hidden lg:inline-flex items-center gap-1 text-xiaomi-orange hover:bg-xiaomi-orange/10 font-medium transition-all px-2 py-0.5 text-xs"
             >
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 1024 1024">
+                <path d="M132.266667 810.666667h759.466666a4.266667 4.266667 0 0 0 4.266667-4.266667V345.6a4.266667 4.266667 0 0 0-4.266667-4.266667h-335.36a3.925333 3.925333 0 0 1-2.986666-1.28l-125.44-125.44A4.224 4.224 0 0 0 424.96 213.333333H132.266667a4.266667 4.266667 0 0 0-4.266667 4.266667v588.8a4.266667 4.266667 0 0 0 4.266667 4.266667z" />
+              </svg>
               {post.category}
             </Link>
           </div>

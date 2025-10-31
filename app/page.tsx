@@ -102,7 +102,12 @@ export default function Home() {
                 <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
                   <div className="flex items-center gap-2 text-xs text-gray-400">
                     <span>{post.date}</span>
-                    <span className="px-2 py-0.5 text-xiaomi-orange text-xs font-medium">{post.category}</span>
+                    <span className="px-2 py-0.5 text-xiaomi-orange text-xs font-medium flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 1024 1024">
+                        <path d="M132.266667 810.666667h759.466666a4.266667 4.266667 0 0 0 4.266667-4.266667V345.6a4.266667 4.266667 0 0 0-4.266667-4.266667h-335.36a3.925333 3.925333 0 0 1-2.986666-1.28l-125.44-125.44A4.224 4.224 0 0 0 424.96 213.333333H132.266667a4.266667 4.266667 0 0 0-4.266667 4.266667v588.8a4.266667 4.266667 0 0 0 4.266667 4.266667z" />
+                      </svg>
+                      {post.category}
+                    </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.slice(0, 2).map((tag) => (
