@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-xiaomi-text font-bold mb-4 text-sm">快速链接</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               <li>
                 <Link href="/" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
                   首页
@@ -30,14 +30,39 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/links" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  链接
-                </Link>
+                <div className="text-gray-600 text-sm font-medium mb-1.5">链接</div>
+                <ul className="space-y-1.5 ml-3">
+                  <li>
+                    <Link href="/tools" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
+                      常用工具
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/links" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
+                      友情链接
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li>
-                <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
-                  关于
-                </Link>
+                <div className="text-gray-600 text-sm font-medium mb-1.5">关于</div>
+                <ul className="space-y-1.5 ml-3">
+                  <li>
+                    <Link href="/about" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
+                      个人简介
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/equipment" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
+                      我的装备
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about#contact" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
+                      联系方式
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
