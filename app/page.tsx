@@ -97,7 +97,7 @@ export default function Home() {
               <Link 
                 key={post.slug}
                 href={`/blog/${post.hash}`}
-                className="group bg-white border border-gray-200 p-6 hover:border-xiaomi-orange hover:shadow-lg transition-all duration-300"
+                className="group bg-white border border-gray-200 p-8 hover:border-xiaomi-orange hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
                   <div className="flex items-center gap-2 text-xs text-gray-400">

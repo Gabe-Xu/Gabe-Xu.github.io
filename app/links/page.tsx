@@ -22,6 +22,13 @@ export default function LinksPage() {
       logo: 'https://bu.dusays.com/2022/12/28/63ac2812183aa.png',
       logoSize: 'full'
     },
+    { 
+      name: '安知鱼', 
+      url: 'https://blog.anheyu.com/', 
+      description: '生活明朗，万物可爱',
+      logo: 'https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg',
+      logoSize: 'full'
+    },
   ]
 
   return (
