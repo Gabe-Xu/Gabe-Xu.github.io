@@ -15,8 +15,8 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* 中间四个卡片 - 居中对齐 */}
-          <div className="flex gap-14">
+          {/* 中间四个卡片 - 居中对齐 - 仅桌面端显示 */}
+          <div className="hidden md:flex gap-14">
             {/* 首页 */}
             <div className="w-24">
               <Link href="/" className="text-xiaomi-text font-bold mb-4 text-sm block hover:text-xiaomi-orange transition-colors">
