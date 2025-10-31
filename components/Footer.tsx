@@ -84,10 +84,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-wrap items-center gap-6">
             <p className="text-gray-500 text-xs">
-              © {currentYear} Gabriel
+              © {currentYear} Gabriel. All Rights Reserved.
             </p>
             <a 
               href="https://icp.gov.moe/?keyword=20259463" 
@@ -105,6 +105,15 @@ export default function Footer() {
             <Link href="/terms" className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors">
               使用条款
             </Link>
+            <a 
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors"
+              title="知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议"
+            >
+              CC BY-NC-SA 4.0
+            </a>
           </div>
         </div>
       </div>

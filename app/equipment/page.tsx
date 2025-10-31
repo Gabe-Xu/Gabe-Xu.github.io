@@ -5,9 +5,9 @@ import { useState } from 'react'
 export default function EquipmentPage() {
   const equipment = [
     {
-      name: 'Acer Nitro AN515-57',
+      name: '宏碁暗影骑士 5 AN515-57',
       category: '电脑',
-      spec: 'i5-11400H / RTX 3050 / 16GB RAM',
+      spec: 'i5-11400H / RTX 3050 / 16GB 内存',
       description: '性能强劲的游戏本，兼顾开发和娱乐需求',
       image: '/equipment/acer-nitro.png',
       emoji: '💻',
@@ -25,71 +25,48 @@ export default function EquipmentPage() {
       link: 'https://www.vivo.com.cn/vivo/iqooz3/'
     },
     {
-      name: 'iPad Air',
-      category: '平板',
-      spec: '第五代 / 256GB / Apple Pencil',
-      description: '绘图、笔记和轻度办公的便携选择',
-      image: '',
-      emoji: '📲',
-      color: 'gray'
-    },
-    {
-      name: 'Magic Keyboard',
+      name: '狼蛛 S98 Pro 机械键盘',
       category: '外设',
-      spec: '触控 ID / 中文布局',
-      description: '打字体验舒适，无线连接稳定',
-      image: '',
+      spec: '星海蓝 / 焦糖布丁轴',
+      description: '电竞级机械轴体，RGB 背光，打字手感出色',
+      image: '/equipment/aula-s98pro.png',
       emoji: '⌨️',
-      color: 'gray'
+      color: 'blue',
+      link: 'https://www.aulacn.com/product-detail/s98pro'
     },
     {
-      name: 'Magic Mouse',
+      name: '罗技 POP 无线鼠标',
       category: '外设',
-      spec: '第二代 / 白色',
-      description: '触控手势流畅，设计简约',
-      image: '',
+      spec: '热力黄 / 无线蓝牙',
+      description: '时尚配色，握感舒适，办公娱乐两相宜',
+      image: '/equipment/logitech-pop.png',
       emoji: '🖱️',
-      color: 'gray'
+      color: 'yellow',
+      link: 'https://www.logitech.com/zh-cn/shop/p/pop-wireless-mouse.910-006420'
     },
     {
-      name: 'AirPods Pro',
+      name: '南卡 Runner CC4',
       category: '音频',
-      spec: '第二代 / USB-C',
-      description: '主动降噪，音质出色，续航持久',
-      image: '',
+      spec: '深灰色 / 骨传导耳机',
+      description: '开放式佩戴，久戴不累，运动音乐两不误',
+      image: '/equipment/nank-runner-cc4.png',
       emoji: '🎧',
-      color: 'gray'
+      color: 'gray',
+      link: 'https://item.jd.com/10091800588950.html'
     },
     {
-      name: 'Dell UltraSharp 27"',
-      category: '显示器',
-      spec: '4K IPS / 色域 99% sRGB',
-      description: '精准色彩，适合设计和开发工作',
-      image: '',
-      emoji: '🖥️',
-      color: 'gray'
-    },
-    {
-      name: 'Apple Watch Series 9',
+      name: '小米手环 9 Pro',
       category: '穿戴',
-      spec: 'GPS / 45mm',
+      spec: '黑色 / 大屏高清 / 智能 NFC',
       description: '健康监测，通知提醒，运动记录',
-      image: '',
+      image: '/equipment/mi-band-9-pro.png',
       emoji: '⌚',
-      color: 'gray'
-    },
-    {
-      name: 'Samsung T7 SSD',
-      category: '存储',
-      spec: '2TB / USB 3.2',
-      description: '便携快速，项目备份和文件传输',
-      image: '',
-      emoji: '💾',
-      color: 'gray'
+      color: 'black',
+      link: 'https://www.mi.com/prod/xiaomi-shouhuan-9-pro'
     },
   ]
 
-  const categories = ['全部装备', '电脑', '手机', '平板', '外设', '音频', '显示器', '穿戴', '存储']
+  const categories = ['全部装备', '电脑', '手机', '外设', '音频', '穿戴']
   const [selectedCategory, setSelectedCategory] = useState('全部装备')
 
   const filteredEquipment = selectedCategory === '全部装备' 
@@ -154,8 +131,8 @@ export default function EquipmentPage() {
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-auto object-contain group-hover:scale-105 transition-transform duration-500"
-                      style={{ height: '150px' }}
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                      style={{ maxHeight: '150px', maxWidth: '280px' }}
                     />
                   ) : (
                     <div className="text-8xl group-hover:scale-105 transition-transform duration-500">
@@ -189,8 +166,8 @@ export default function EquipmentPage() {
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-auto object-contain group-hover:scale-105 transition-transform duration-500"
-                      style={{ height: '150px' }}
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                      style={{ maxHeight: '150px', maxWidth: '280px' }}
                     />
                   ) : (
                     <div className="text-8xl group-hover:scale-105 transition-transform duration-500">
