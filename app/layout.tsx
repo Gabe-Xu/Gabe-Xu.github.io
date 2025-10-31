@@ -3,7 +3,6 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
-import ConstructionModal from '@/components/ConstructionModal'
 
 export const metadata: Metadata = {
   title: 'Gabriel - 个人博客',
@@ -43,7 +42,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileBottomNav />
-        <ConstructionModal />
       </body>
     </html>
   )
