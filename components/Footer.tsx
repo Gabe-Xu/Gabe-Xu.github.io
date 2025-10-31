@@ -8,16 +8,16 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 pb-24 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
+          <div>
             <h3 className="text-2xl font-black font-logo text-xiaomi-text mb-4 tracking-tight">Gabriel</h3>
             <p className="text-gray-500 mb-4 max-w-md text-sm">
               分享技术、设计与生活的思考<br />持续学习，不断进步
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation Links */}
           <div>
-            <h4 className="text-xiaomi-text font-bold mb-4 text-sm">快速链接</h4>
+            <h4 className="text-xiaomi-text font-bold mb-4 text-sm">导航</h4>
             <ul className="space-y-2.5">
               <li>
                 <Link href="/" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
@@ -29,40 +29,32 @@ export default function Footer() {
                   博客
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* More Links */}
+          <div>
+            <h4 className="text-xiaomi-text font-bold mb-4 text-sm">更多</h4>
+            <ul className="space-y-2.5">
               <li>
-                <div className="text-gray-600 text-sm font-medium mb-1.5">链接</div>
-                <ul className="space-y-1.5 ml-3">
-                  <li>
-                    <Link href="/tools" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
-                      常用工具
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/links" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
-                      友情链接
-                    </Link>
-                  </li>
-                </ul>
+                <Link href="/tools" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  常用工具
+                </Link>
               </li>
               <li>
-                <div className="text-gray-600 text-sm font-medium mb-1.5">关于</div>
-                <ul className="space-y-1.5 ml-3">
-                  <li>
-                    <Link href="/about" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
-                      个人简介
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/equipment" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
-                      我的装备
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about#contact" className="text-gray-500 hover:text-xiaomi-orange transition-colors text-sm">
-                      联系方式
-                    </Link>
-                  </li>
-                </ul>
+                <Link href="/links" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  友情链接
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  关于我
+                </Link>
+              </li>
+              <li>
+                <Link href="/equipment" className="text-gray-600 hover:text-xiaomi-orange transition-colors text-sm">
+                  我的装备
+                </Link>
               </li>
             </ul>
           </div>
