@@ -24,9 +24,16 @@
   /* 垂直对齐调整 */
   display: inline-flex;
   align-items: center;
+  /* PC/Android 上微调向下，让大写字母居中 */
+  transform: translateY(0.08em);
 }
 
-/* LINE Seed Sans 字体垂直对齐优化 - 移除偏移 */
+/* iOS 设备使用原始位置（大写字母已经居中） */
+@supports (-webkit-touch-callout: none) {
+  .font-logo {
+    transform: translateY(0);
+  }
+}
 
 /* Tailwind font-black 使用 Extra Bold - 增加行高 */
 .font-black {

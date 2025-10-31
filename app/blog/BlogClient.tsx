@@ -176,7 +176,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
 
   return (
     <article className="min-h-screen bg-[#fafbfc] pt-14 pb-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="pt-12 md:pt-20 pb-8 md:pb-12 animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-3 sm:mb-6 tracking-tight">
