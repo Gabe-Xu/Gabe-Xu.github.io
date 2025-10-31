@@ -26,10 +26,17 @@
   align-items: center;
 }
 
-/* 只有LINE Seed Sans字体加载成功时才下移 */
+/* PC和安卓上移Gabriel字体，iOS不变 */
 @supports (font-family: 'LINE Seed Sans XBd') {
   .font-logo {
-    transform: translateY(0.2em);
+    transform: translateY(0.05em);
+  }
+}
+
+/* iOS设备保持原位（检测iOS特征） */
+@supports (-webkit-touch-callout: none) {
+  .font-logo {
+    transform: translateY(0.2em) !important;
   }
 }
 
