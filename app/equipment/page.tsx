@@ -83,8 +83,8 @@ export default function EquipmentPage() {
           </h1>
 
           {/* Category Filter - 移动端可滑动 */}
-          <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide mt-10">
-            <div className="flex gap-2 md:gap-3 min-w-max md:flex-wrap">
+          <div className="overflow-x-auto md:overflow-visible -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide mt-10">
+            <div className="flex gap-2 md:gap-3 md:flex-wrap">
               {categories.map((category) => {
                 const count = category === '全部装备' 
                   ? equipment.length 
