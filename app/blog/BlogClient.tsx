@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
 interface Post {
@@ -36,6 +36,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
   const [selectedArchive, setSelectedArchive] = useState<string | null>(null)
   const [showAllCategories, setShowAllCategories] = useState(false)
   const [expandedYears, setExpandedYears] = useState<Set<string>>(new Set())
+  const categoryRefs = useRef<Record<string, HTMLButtonElement | null>>({})
 
   // 从URL参数初始化筛选条件
   useEffect(() => {
@@ -236,7 +237,18 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                   return (
                     <button
                       key={category}
-                      onClick={() => handleCategoryClick(category)}
+                      ref={(el) => { categoryRefs.current[category] = el }}
+                      onClick={() => {
+                        handleCategoryClick(category)
+                        // 移动端滚动到选中的分类
+                        setTimeout(() => {
+                          categoryRefs.current[category]?.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest',
+                            inline: 'start'
+                          })
+                        }, 10)
+                      }}
                       className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap ${
                         selectedCategory === category
                           ? 'bg-xiaomi-orange text-white shadow-md'
