@@ -211,8 +211,8 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
             </div>
 
             {/* Category Filter - 移动端可滑动，PC端hover展开 */}
-            <div className="mb-4 overflow-x-auto md:overflow-visible -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide group relative">
-              <div className="flex gap-2 md:gap-3 md:flex-wrap md:max-h-[50px] md:overflow-hidden md:group-hover:max-h-[500px] md:transition-all md:duration-500 md:ease-in-out">
+            <div className="mb-4 overflow-x-auto md:overflow-visible -mx-6 px-6 pr-6 lg:mx-0 lg:px-0 scrollbar-hide group relative">
+              <div className="flex gap-2 md:gap-3 md:flex-wrap md:max-h-[50px] md:overflow-hidden md:group-hover:max-h-[500px] md:transition-all md:duration-500 md:ease-in-out pr-6 md:pr-0">
                 <button
                   onClick={() => handleCategoryClick(null)}
                   className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap ${
