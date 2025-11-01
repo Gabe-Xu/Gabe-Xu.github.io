@@ -84,8 +84,8 @@ export default function EquipmentPage() {
           </h1>
 
           {/* Category Filter - 移动端可滑动，PC端hover展开 */}
-          <div className="mt-10 group relative">
-            <div className="overflow-x-auto md:overflow-visible -mx-6 md:mx-0 scrollbar-hide px-6 md:px-0">
+          <div className="mt-10 group relative -mx-6 md:mx-0">
+            <div className="overflow-x-auto md:overflow-visible scrollbar-hide px-6 md:px-0">
               <div className="flex gap-2 md:gap-3 md:flex-wrap md:max-h-[50px] md:overflow-hidden md:group-hover:max-h-[500px] md:transition-all md:duration-500 md:ease-in-out">
               {categories.map((category) => {
                 const count = category === '全部装备' 
@@ -122,8 +122,6 @@ export default function EquipmentPage() {
                   </button>
                 )
               })}
-                {/* 移动端右侧间距占位 */}
-                <div className="w-6 md:w-0 flex-shrink-0"></div>
               </div>
             </div>
           </div>

@@ -30,17 +30,17 @@ export default function LinksPage() {
       logoSize: 'full'
     },
     { 
-      name: 'GSZYZL', 
+      name: 'Zhangl', 
       url: 'https://www.blog.gszyzl.cn/', 
       description: '技术博客',
-      logo: 'https://www.blog.gszyzl.cn/favicon.ico',
+      logo: 'https://www.gszyzl.cn/upload/image/login.png',
       logoSize: 'full'
     },
     { 
-      name: 'Vacu', 
+      name: 'VacuolePao', 
       url: 'https://blog.vacu.top/', 
       description: '个人博客',
-      logo: 'https://blog.vacu.top/favicon.ico',
+      logo: 'https://smms.app/image/vW2pnGsJOAd6qEX',
       logoSize: 'full'
     },
   ]
