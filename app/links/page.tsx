@@ -29,6 +29,20 @@ export default function LinksPage() {
       logo: 'https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg',
       logoSize: 'full'
     },
+    { 
+      name: 'GSZYZL', 
+      url: 'https://www.blog.gszyzl.cn/', 
+      description: '技术博客',
+      logo: 'https://www.blog.gszyzl.cn/favicon.ico',
+      logoSize: 'full'
+    },
+    { 
+      name: 'Vacu', 
+      url: 'https://blog.vacu.top/', 
+      description: '个人博客',
+      logo: 'https://blog.vacu.top/favicon.ico',
+      logoSize: 'full'
+    },
   ]
 
   return (
