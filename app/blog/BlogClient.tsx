@@ -214,14 +214,16 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
               <div className="flex gap-2 md:gap-3 min-w-max md:flex-wrap">
                 <button
                   onClick={() => handleCategoryClick(null)}
-                  className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap border-b-2 ${
+                  className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap ${
                     !selectedCategory
-                      ? 'bg-white text-xiaomi-text border-gray-200 border-b-xiaomi-orange'
-                      : 'bg-white text-xiaomi-text border-gray-200 border-b-transparent hover:bg-gray-100'
+                      ? 'bg-xiaomi-orange text-white shadow-md'
+                      : 'bg-white text-xiaomi-text border border-gray-200 hover:bg-gray-100'
                   }`}
                 >
                   全部分类
-                  <span className="ml-1.5 md:ml-2 text-xs text-gray-400 hidden md:inline">
+                  <span className={`ml-1.5 md:ml-2 text-xs hidden md:inline ${
+                    !selectedCategory ? 'text-white/70' : 'text-gray-400'
+                  }`}>
                     ({posts.length})
                   </span>
                 </button>
@@ -235,14 +237,16 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                     <button
                       key={category}
                       onClick={() => handleCategoryClick(category)}
-                      className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap border-b-2 ${
+                      className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap ${
                         selectedCategory === category
-                          ? 'bg-white text-xiaomi-text border-gray-200 border-b-xiaomi-orange'
-                          : 'bg-white text-xiaomi-text border-gray-200 border-b-transparent hover:bg-gray-100'
+                          ? 'bg-xiaomi-orange text-white shadow-md'
+                          : 'bg-white text-xiaomi-text border border-gray-200 hover:bg-gray-100'
                       }`}
                     >
                       {category}
-                      <span className="ml-1.5 md:ml-2 text-xs text-gray-400 hidden md:inline">
+                      <span className={`ml-1.5 md:ml-2 text-xs hidden md:inline ${
+                        selectedCategory === category ? 'text-white/70' : 'text-gray-400'
+                      }`}>
                         ({count})
                       </span>
                     </button>
