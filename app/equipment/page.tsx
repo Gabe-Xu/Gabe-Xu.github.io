@@ -82,32 +82,32 @@ export default function EquipmentPage() {
             我的装备
           </h1>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-3 mt-10">
-          {categories.map((category) => {
-            const count = category === '全部装备' 
-              ? equipment.length 
-              : equipment.filter(item => item.category === category).length
-            
-            return (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-5 py-2.5 text-sm font-medium transition-all ${
-                  selectedCategory === category
-                    ? 'bg-xiaomi-orange text-white shadow-md'
-                    : 'bg-white text-xiaomi-text border border-gray-200 hover:border-xiaomi-orange hover:text-xiaomi-orange'
-                }`}
-              >
-                {category}
-                <span className={`ml-2 text-xs ${
-                  selectedCategory === category ? 'text-white/70' : 'text-gray-400'
-                }`}>
-                  ({count})
-                </span>
-              </button>
-            )
-          })}
+          {/* Category Filter - 移动端可滑动 */}
+          <div className="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide mt-10">
+            <div className="flex gap-2 md:gap-3 min-w-max md:flex-wrap">
+              {categories.map((category) => {
+                const count = category === '全部装备' 
+                  ? equipment.length 
+                  : equipment.filter(item => item.category === category).length
+                
+                return (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap border-b-2 ${
+                      selectedCategory === category
+                        ? 'bg-white text-xiaomi-text border-gray-200 border-b-xiaomi-orange'
+                        : 'bg-white text-xiaomi-text border-gray-200 border-b-transparent hover:bg-gray-100'
+                    }`}
+                  >
+                    {category}
+                    <span className="ml-1.5 md:ml-2 text-xs text-gray-400 hidden md:inline">
+                      ({count})
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
           </div>
         </div>
 

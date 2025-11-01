@@ -123,6 +123,16 @@ a {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* 隐藏滚动条但保持可滚动 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* 下拉菜单动画 - 从上往下滑出 */

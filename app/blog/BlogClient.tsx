@@ -209,21 +209,19 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
               </div>
             </div>
 
-            {/* Category Filter */}
-            <div className="mb-4 group relative">
-              <div className="flex flex-wrap gap-3 max-h-[50px] overflow-hidden group-hover:max-h-[500px] transition-all duration-500 ease-in-out">
+            {/* Category Filter - 移动端可滑动 */}
+            <div className="mb-4 overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0 scrollbar-hide">
+              <div className="flex gap-2 md:gap-3 min-w-max md:flex-wrap">
                 <button
                   onClick={() => handleCategoryClick(null)}
-                  className={`px-5 py-2.5 text-sm font-medium transition-colors ${
+                  className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap border-b-2 ${
                     !selectedCategory
-                      ? 'bg-xiaomi-orange text-white'
-                      : 'bg-white text-xiaomi-text border border-gray-200 hover:border-xiaomi-orange hover:text-xiaomi-orange'
+                      ? 'bg-white text-xiaomi-text border-gray-200 border-b-xiaomi-orange'
+                      : 'bg-white text-xiaomi-text border-gray-200 border-b-transparent hover:bg-gray-100'
                   }`}
                 >
                   全部分类
-                  <span className={`ml-2 text-xs ${
-                    !selectedCategory ? 'text-white/70' : 'text-gray-400'
-                  }`}>
+                  <span className="ml-1.5 md:ml-2 text-xs text-gray-400 hidden md:inline">
                     ({posts.length})
                   </span>
                 </button>
@@ -237,16 +235,14 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                     <button
                       key={category}
                       onClick={() => handleCategoryClick(category)}
-                      className={`px-5 py-2.5 text-sm font-medium transition-colors ${
+                      className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap border-b-2 ${
                         selectedCategory === category
-                          ? 'bg-xiaomi-orange text-white'
-                          : 'bg-white text-xiaomi-text border border-gray-200 hover:border-xiaomi-orange hover:text-xiaomi-orange'
+                          ? 'bg-white text-xiaomi-text border-gray-200 border-b-xiaomi-orange'
+                          : 'bg-white text-xiaomi-text border-gray-200 border-b-transparent hover:bg-gray-100'
                       }`}
                     >
                       {category}
-                      <span className={`ml-2 text-xs ${
-                        selectedCategory === category ? 'text-white/70' : 'text-gray-400'
-                      }`}>
+                      <span className="ml-1.5 md:ml-2 text-xs text-gray-400 hidden md:inline">
                         ({count})
                       </span>
                     </button>

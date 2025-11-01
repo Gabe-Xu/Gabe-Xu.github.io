@@ -68,15 +68,13 @@ export default function Home() {
       </section>
 
       {/* 最新文章区 - 小米风格：更大留白，简洁卡片 */}
-      <section className="py-12 md:py-32 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="flex justify-between items-end mb-8 md:mb-16">
-            <div>
-              <h2 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">最新文章</h2>
-            </div>
+          <div className="flex justify-between items-baseline mb-6 md:mb-10">
+            <h2 className="text-5xl sm:text-6xl font-black text-xiaomi-text tracking-tight">最新文章</h2>
             <Link 
               href="/blog" 
-              className="text-xiaomi-orange hover:text-xiaomi-orange-dark font-medium flex items-center gap-2 group text-sm"
+              className="text-xiaomi-orange hover:text-xiaomi-orange-dark font-medium flex items-center gap-2 group text-sm whitespace-nowrap"
             >
               查看全部
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
