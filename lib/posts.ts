@@ -83,7 +83,7 @@ export function getPostsByCategory(category: string): Post[] {
 
 // 预设的通用分类列表 - 涵盖全世界各类文章
 const PREDEFINED_CATEGORIES = [
-  '技术',
+  '科技',
   '文化',
   '艺术',
   '生活',
@@ -97,7 +97,6 @@ const PREDEFINED_CATEGORIES = [
   '时尚',
   '历史',
   '哲学',
-  '科学',
   '政治',
   '经济',
   '社会',
