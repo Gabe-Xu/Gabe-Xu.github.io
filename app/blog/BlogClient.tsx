@@ -357,7 +357,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                 {/* 分类网格 - 可展开/收起 */}
                 <div className="relative">
                   <div 
-                    className={`grid grid-cols-3 gap-2 ${!showAllCategories ? 'max-h-[120px] overflow-hidden' : ''}`}
+                    className={`grid grid-cols-4 gap-1.5 ${!showAllCategories ? 'max-h-[120px] overflow-hidden' : ''}`}
                   >
                     {categories.map((category) => {
                       const count = posts.filter(p => p.category === category).length
@@ -365,15 +365,15 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                         <button
                           key={category}
                           onClick={() => handleCategoryClick(category)}
-                          className={`flex items-center justify-between px-2 py-1.5 text-sm transition-colors ${
+                          className={`flex items-center justify-between px-1.5 py-1.5 text-sm transition-colors ${
                             selectedCategory === category
                               ? 'bg-xiaomi-orange text-white'
-                              : 'hover:bg-gray-100 text-gray-700'
+                              : 'text-gray-700 hover:text-xiaomi-orange'
                           }`}
                           title={category}
                         >
                           <span className="truncate">{category}</span>
-                          <span className={`ml-1 flex-shrink-0 text-xs ${selectedCategory === category ? 'text-white/80' : 'text-gray-400'}`}>
+                          <span className={`ml-0.5 flex-shrink-0 text-xs ${selectedCategory === category ? 'text-white/80' : 'text-gray-400'}`}>
                             ({count})
                           </span>
                         </button>
@@ -381,14 +381,14 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                     })}
                   </div>
 
-                  {/* 渐变遮罩 - 只在未展开且分类数量超过6个时显示 */}
-                  {!showAllCategories && categories.length > 6 && (
+                  {/* 渐变遮罩 - 只在未展开且分类数量超过8个时显示 */}
+                  {!showAllCategories && categories.length > 8 && (
                     <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                   )}
                 </div>
 
-                {/* 展开/收起按钮 - 只在分类数量超过6个时显示 */}
-                {categories.length > 6 && (
+                {/* 展开/收起按钮 - 只在分类数量超过8个时显示 */}
+                {categories.length > 8 && (
                   <button
                     onClick={() => setShowAllCategories(!showAllCategories)}
                     className="w-full text-center text-xs text-xiaomi-orange hover:text-xiaomi-orange-hover mt-1 py-1"
