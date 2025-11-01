@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function EquipmentPage() {
   const equipment = [
@@ -93,7 +93,18 @@ export default function EquipmentPage() {
                 return (
                   <button
                     key={category}
-                    onClick={() => setSelectedCategory(category)}
+                    ref={(el) => categoryRefs.current[category] = el}
+                    onClick={() => {
+                      setSelectedCategory(category)
+                      // 移动端滚动到选中的分类
+                      setTimeout(() => {
+                        categoryRefs.current[category]?.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'nearest',
+                          inline: 'start'
+                        })
+                      }, 10)
+                    }}
                     className={`px-3 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium transition-all whitespace-nowrap ${
                       selectedCategory === category
                         ? 'bg-xiaomi-orange text-white shadow-md'
