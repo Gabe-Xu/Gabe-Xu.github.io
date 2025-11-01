@@ -122,7 +122,6 @@ export default function EquipmentPage() {
                   </button>
                 )
               })}
-              <div className="w-6 flex-shrink-0 md:hidden" aria-hidden="true"></div>
             </div>
           </div>
         </div>

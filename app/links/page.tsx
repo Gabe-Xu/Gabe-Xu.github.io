@@ -40,7 +40,7 @@ export default function LinksPage() {
       name: 'VacuolePao', 
       url: 'https://blog.vacu.top/', 
       description: '个人博客',
-      logo: 'https://i.loli.net/2021/08/27/vW2pnGsJOAd6qEX.jpg',
+      logo: 'https://s2.loli.net/2025/08/05/vW2pnGsJOAd6qEX.jpg',
       logoSize: 'full'
     },
   ]
