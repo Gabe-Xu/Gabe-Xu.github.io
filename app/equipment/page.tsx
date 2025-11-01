@@ -123,7 +123,7 @@ export default function EquipmentPage() {
                 )
               })}
                 {/* 移动端右侧间距占位 */}
-                <div className="w-0 md:hidden flex-shrink-0"></div>
+                <div className="w-6 md:w-0 flex-shrink-0"></div>
               </div>
             </div>
           </div>
