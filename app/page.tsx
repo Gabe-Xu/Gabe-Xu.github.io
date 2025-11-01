@@ -73,7 +73,6 @@ export default function Home() {
           <div className="flex justify-between items-end mb-8 md:mb-16">
             <div>
               <h2 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-6 tracking-tight">最新文章</h2>
-              <p className="text-xl text-gray-600 max-w-3xl">探索最新的技术分享</p>
             </div>
             <Link 
               href="/blog" 
