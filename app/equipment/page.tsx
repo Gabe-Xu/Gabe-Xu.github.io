@@ -68,6 +68,7 @@ export default function EquipmentPage() {
 
   const categories = ['全部装备', '电脑', '手机', '外设', '音频', '穿戴']
   const [selectedCategory, setSelectedCategory] = useState('全部装备')
+  const categoryRefs = useRef<Record<string, HTMLButtonElement | null>>({})
 
   const filteredEquipment = selectedCategory === '全部装备' 
     ? equipment 
