@@ -47,47 +47,44 @@ export default function ToolsPage() {
       })
 
   return (
-    <div className="bg-[#fafbfc] pt-14 pb-16">
+    <div className="bg-[#fafbfc] pt-14 pb-12">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-12 md:pt-20 pb-8 md:pb-12 animate-fade-in">
+        <div className="pt-12 md:pt-20 pb-6 md:pb-10 animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-3 sm:mb-6 tracking-tight">
             常用工具
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            我的日常工具箱
-          </p>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category) => {
-              const count = category === '全部' 
-                ? tools.length 
-                : category === 'AI' 
-                  ? tools.filter(item => item.category === 'AI 工具').length
-                  : category === '开发'
-                    ? tools.filter(item => item.category === '开发工具').length
-                    : tools.filter(item => item.category === '设计工具').length
-              
-              return (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-5 py-2.5 text-sm font-medium transition-all ${
-                    selectedCategory === category
-                      ? 'bg-xiaomi-orange text-white shadow-md'
-                      : 'bg-white text-xiaomi-text border border-gray-200 hover:border-xiaomi-orange hover:text-xiaomi-orange'
-                  }`}
-                >
-                  {category}
-                  <span className={`ml-2 text-xs ${
-                    selectedCategory === category ? 'text-white/70' : 'text-gray-400'
-                  }`}>
-                    ({count})
-                  </span>
-                </button>
-              )
-            })}
+          <div className="flex flex-wrap gap-3 mt-10">
+          {categories.map((category) => {
+            const count = category === '全部' 
+              ? tools.length 
+              : category === 'AI' 
+                ? tools.filter(item => item.category === 'AI 工具').length
+                : category === '开发'
+                  ? tools.filter(item => item.category === '开发工具').length
+                  : tools.filter(item => item.category === '设计工具').length
+            
+            return (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2.5 text-sm font-medium transition-all ${
+                  selectedCategory === category
+                    ? 'bg-xiaomi-orange text-white shadow-md'
+                    : 'bg-white text-xiaomi-text border border-gray-200 hover:border-xiaomi-orange hover:text-xiaomi-orange'
+                }`}
+              >
+                {category}
+                <span className={`ml-2 text-xs ${
+                  selectedCategory === category ? 'text-white/70' : 'text-gray-400'
+                }`}>
+                  ({count})
+                </span>
+              </button>
+            )
+          })}
           </div>
         </div>
 

@@ -3,13 +3,10 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-14 pb-16">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="pt-12 md:pt-20 pb-8 md:pb-16 animate-fade-in">
+        <div className="pt-12 md:pt-20 pb-6 md:pb-10 animate-fade-in">
           <h1 className="text-5xl sm:text-6xl font-black text-xiaomi-text mb-3 sm:mb-6 tracking-tight">
-            关于
+            个人简介
           </h1>
-          <p className="text-xl text-gray-600">
-            了解我的故事和技术旅程
-          </p>
         </div>
 
         {/* Profile Section */}
@@ -27,25 +24,10 @@ export default function AboutPage() {
           </div>
           <h2 className="text-4xl font-black font-logo text-xiaomi-text mb-4 tracking-tight">Gabriel</h2>
           <p className="text-xl text-gray-600">
-            全栈开发者 | UI/UX设计师 | 技术写作者
+            一个兴趣使然的设计爱好者
           </p>
         </div>
 
-        {/* Bio */}
-        <div className="mb-8 md:mb-12 animate-slide-up">
-          <h2 className="text-4xl font-black text-xiaomi-text mb-8 tracking-tight">个人简介</h2>
-          <div className="space-y-6 text-gray-600 text-lg max-w-4xl">
-            <p>
-              你好！我是Gabriel，一名热爱技术的开发者。从接触编程的那一刻起，我就被代码创造价值的能力深深吸引。
-            </p>
-            <p>
-              我专注于前端开发，特别是React生态系统，同时对UI/UX设计充满热情。我相信优秀的产品应该兼具美观的外表和流畅的体验。
-            </p>
-            <p>
-              在这个博客中，我会分享我的技术见解、项目经验以及对设计的思考。希望我的分享能够帮助到更多的开发者。
-            </p>
-          </div>
-        </div>
 
         {/* MBTI & Motto Cards */}
         <div className="mb-12 md:mb-20 animate-slide-up">
@@ -69,7 +51,7 @@ export default function AboutPage() {
                   href="https://www.16personalities.com/ch/%E6%A1%A3%E6%A1%88/0946bd8c81df7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-xiaomi-orange hover:text-xiaomi-text transition-colors font-medium group"
+                  className="inline-flex items-center gap-2 text-sm text-xiaomi-orange font-medium group"
                 >
                   查看详情
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,8 +67,8 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-          </div>
-        </div>
+              </div>
+            </div>
 
         {/* Hobbies */}
         <div id="hobbies" className="mb-12 md:mb-20 animate-slide-up scroll-mt-20">
