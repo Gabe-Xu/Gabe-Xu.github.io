@@ -37,37 +37,31 @@ export default function Home() {
       </section>
 
       {/* 特色内容区 - 小米风格：大图配简短文字 */}
-      <section className="py-32 bg-[#fafbfc]">
+      <section className="py-12 md:py-32 bg-[#fafbfc]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-            {/* 卡片1 */}
-            <div className="group relative overflow-hidden bg-gray-100 aspect-square">
-              <div className="absolute inset-0 bg-xiaomi-orange flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
-                <h3 className="text-4xl font-black text-white mb-4 tracking-tight">前端开发</h3>
-                <p className="text-white/90 text-center text-sm">
-                  React · Next.js · TypeScript
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 卡片1 - 橙色 */}
+            <div className="bg-xiaomi-orange text-white p-12 aspect-square flex flex-col items-center justify-center">
+              <h3 className="text-4xl font-black mb-4 tracking-tight">前端开发</h3>
+              <p className="text-white/90 text-center text-sm">
+                React · Next.js · TypeScript
+              </p>
             </div>
 
-            {/* 卡片2 */}
-            <div className="group relative overflow-hidden bg-gray-100 aspect-square">
-              <div className="absolute inset-0 bg-xiaomi-dark flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
-                <h3 className="text-4xl font-black text-white mb-4 tracking-tight">UI/UX设计</h3>
-                <p className="text-white/90 text-center text-sm">
-                  简洁 · 优雅 · 实用
-                </p>
-              </div>
+            {/* 卡片2 - 黑色 */}
+            <div className="bg-xiaomi-dark text-white p-12 aspect-square flex flex-col items-center justify-center">
+              <h3 className="text-4xl font-black mb-4 tracking-tight">UI/UX设计</h3>
+              <p className="text-white/90 text-center text-sm">
+                简洁 · 优雅 · 实用
+              </p>
             </div>
 
-            {/* 卡片3 */}
-            <div className="group relative overflow-hidden bg-gray-100 aspect-square">
-              <div className="absolute inset-0 bg-gray-100 flex flex-col items-center justify-center p-12 transition-transform duration-300 hover:scale-105">
-                <h3 className="text-4xl font-black text-xiaomi-text mb-4 tracking-tight">技术分享</h3>
-                <p className="text-xiaomi-text text-center text-sm">
-                  持续学习 · 不断进步
-                </p>
-              </div>
+            {/* 卡片3 - 灰色 */}
+            <div className="bg-gray-100 text-xiaomi-text p-12 aspect-square flex flex-col items-center justify-center">
+              <h3 className="text-4xl font-black mb-4 tracking-tight">技术分享</h3>
+              <p className="text-xiaomi-text text-center text-sm">
+                持续学习 · 不断进步
+              </p>
             </div>
           </div>
         </div>

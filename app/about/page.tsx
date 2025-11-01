@@ -47,52 +47,82 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Skills */}
-        <div id="skills" className="mb-12 md:mb-20 animate-slide-up scroll-mt-20">
-          <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">技能专长</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <div className="p-10 bg-gray-100">
-              <h3 className="text-2xl font-bold text-xiaomi-text mb-6">前端开发</h3>
-              <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML/CSS'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-white text-xiaomi-text font-medium text-sm border border-gray-200">
-                    {skill}
-                  </span>
-                ))}
+        {/* MBTI & Motto Cards */}
+        <div className="mb-12 md:mb-20 animate-slide-up">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* MBTI Card - 灰色 */}
+            <div className="bg-gray-100 p-8 relative overflow-hidden min-h-[180px]">
+              <div className="relative z-10 pr-24">
+                <p className="text-sm text-gray-500 mb-2">性格</p>
+                <h3 className="text-3xl font-black text-xiaomi-text mb-2">ISTP-A</h3>
+                <p className="text-lg text-gray-600 mb-6">鉴赏家</p>
+                <a 
+                  href="https://www.16personalities.com/ch/%E6%A1%A3%E6%A1%88/0946bd8c81df7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-xiaomi-orange hover:text-xiaomi-text transition-colors font-medium group"
+                >
+                  查看详情
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+              <div className="absolute right-0 top-4 w-56 h-64">
+                <img 
+                  src="/istp-virtuoso-s3-male.svg" 
+                  alt="ISTP" 
+                  className="w-full h-full object-contain transform -scale-x-100"
+                />
               </div>
             </div>
 
-            <div className="p-10 bg-xiaomi-dark text-white">
-              <h3 className="text-2xl font-bold mb-6">设计工具</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Figma', 'Adobe XD', 'Sketch', 'Photoshop', 'Illustrator'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-white/10 text-white font-medium text-sm border border-white/20">
-                    {skill}
-                  </span>
-                ))}
+            {/* Motto Card - 橙色 */}
+            <div className="md:col-span-2 bg-xiaomi-orange text-white p-8">
+              <p className="text-sm text-white/70 mb-2">座右铭</p>
+              <h3 className="text-2xl font-bold mb-6">保持专注</h3>
+              <p className="text-base text-white/90 leading-relaxed">
+                代码改变世界，设计创造美好。
+              </p>
+            </div>
               </div>
             </div>
 
-            <div className="p-10 bg-xiaomi-orange text-white">
-              <h3 className="text-2xl font-bold mb-6">后端技术</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'REST API'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-white/10 text-white font-medium text-sm border border-white/20">
-                    {skill}
-                  </span>
-                ))}
+        {/* Hobbies */}
+        <div id="hobbies" className="mb-12 md:mb-20 animate-slide-up scroll-mt-20">
+          <h2 className="text-4xl font-black text-xiaomi-text mb-8 tracking-tight">兴趣爱好</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 爱好卡片 1 - 黑色 */}
+            <div className="bg-xiaomi-dark text-white p-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold">代码编辑</h3>
+                <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
               </div>
+              <p className="text-sm text-white/70">VS Code</p>
             </div>
 
-            <div className="p-10 bg-gray-100">
-              <h3 className="text-2xl font-bold text-xiaomi-text mb-6">开发工具</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Git', 'VS Code', 'Docker', 'Vercel', 'GitHub'].map((skill) => (
-                  <span key={skill} className="px-4 py-2 bg-white text-xiaomi-text font-medium text-sm border border-gray-200">
-                    {skill}
-                  </span>
-                ))}
+            {/* 爱好卡片 2 - 橙色 */}
+            <div className="bg-xiaomi-orange text-white p-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold">阅读</h3>
+                <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
+              <p className="text-sm text-white/70">技术书籍 · 设计思维</p>
+            </div>
+
+            {/* 爱好卡片 3 - 灰色 */}
+            <div className="bg-gray-100 p-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-2xl font-bold text-xiaomi-text">音乐</h3>
+                <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                </svg>
+              </div>
+              <p className="text-sm text-gray-600">电子音乐 · Lo-Fi</p>
             </div>
           </div>
         </div>
@@ -134,7 +164,7 @@ export default function AboutPage() {
         <div id="contact" className="animate-slide-up scroll-mt-20">
           <h2 className="text-4xl font-black text-xiaomi-text mb-12 tracking-tight">联系方式</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Email */}
+            {/* Email - 黑色 */}
             <div className="bg-xiaomi-dark text-white p-10">
               <div className="w-12 h-12 bg-white/10 flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +175,7 @@ export default function AboutPage() {
               <p className="text-gray-400">gabe_xu@qq.com</p>
             </div>
 
-            {/* Location */}
+            {/* Location - 橙色 */}
             <div className="bg-xiaomi-orange text-white p-10">
               <div className="w-12 h-12 bg-white/20 flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,7 +187,7 @@ export default function AboutPage() {
               <p className="text-white/90">中国，汕头</p>
             </div>
 
-            {/* Social Media */}
+            {/* Social Media - 灰色 */}
             <div className="bg-gray-100 p-10">
               <div className="w-12 h-12 bg-xiaomi-dark flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
