@@ -113,21 +113,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-wrap items-center gap-6">
-            <p className="text-gray-500 text-xs">
+        <div className="border-t border-gray-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
+            <p className="text-gray-500 text-xs leading-snug">
               © {currentYear} Gabriel. All Rights Reserved.
             </p>
             <a 
               href="https://icp.gov.moe/?keyword=20259463" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors"
+              className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors leading-snug"
             >
               萌ICP备20259463号
             </a>
           </div>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex gap-4 md:gap-6 mt-2 md:mt-0">
             <Link href="/privacy" className="text-gray-500 hover:text-xiaomi-orange text-xs transition-colors">
               隐私政策
             </Link>
