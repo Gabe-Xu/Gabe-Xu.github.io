@@ -221,7 +221,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                   }`}
                 >
                   全部分类
-                  <span className={`ml-1.5 md:ml-2 text-xs hidden md:inline ${
+                  <span className={`ml-1.5 md:ml-2 text-xs ${
                     !selectedCategory ? 'text-white/70' : 'text-gray-400'
                   }`}>
                     ({posts.length})
@@ -244,7 +244,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                       }`}
                     >
                       {category}
-                      <span className={`ml-1.5 md:ml-2 text-xs hidden md:inline ${
+                      <span className={`ml-1.5 md:ml-2 text-xs ${
                         selectedCategory === category ? 'text-white/70' : 'text-gray-400'
                       }`}>
                         ({count})
