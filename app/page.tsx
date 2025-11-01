@@ -40,16 +40,16 @@ export default function Home() {
       <section className="py-12 md:py-32 bg-[#fafbfc]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* 卡片1 - 橙色 */}
-            <div className="bg-xiaomi-orange text-white p-12 aspect-square flex flex-col items-center justify-center">
+            {/* 卡片1 - 黑色 */}
+            <div className="bg-xiaomi-dark text-white p-12 aspect-square flex flex-col items-center justify-center">
               <h3 className="text-4xl font-black mb-4 tracking-tight">前端开发</h3>
               <p className="text-white/90 text-center text-sm">
                 React · Next.js · TypeScript
               </p>
             </div>
 
-            {/* 卡片2 - 黑色 */}
-            <div className="bg-xiaomi-dark text-white p-12 aspect-square flex flex-col items-center justify-center">
+            {/* 卡片2 - 橙色 */}
+            <div className="bg-xiaomi-orange text-white p-12 aspect-square flex flex-col items-center justify-center">
               <h3 className="text-4xl font-black mb-4 tracking-tight">UI/UX设计</h3>
               <p className="text-white/90 text-center text-sm">
                 简洁 · 优雅 · 实用
