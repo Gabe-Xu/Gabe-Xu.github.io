@@ -1,0 +1,1 @@
+refactor: optimize page layout and styles - adjust spacing, fix whitespace, improve category filters
