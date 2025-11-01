@@ -50,8 +50,8 @@ export default function AboutPage() {
         {/* MBTI & Motto Cards */}
         <div className="mb-12 md:mb-20 animate-slide-up">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Motto Card - 黑色 */}
-            <div className="bg-xiaomi-dark text-white p-8">
+            {/* Motto Card - 橙色 */}
+            <div className="bg-xiaomi-orange text-white p-8">
               <p className="text-sm text-white/70 mb-2">座右铭</p>
               <h3 className="text-2xl font-bold mb-4">保持专注</h3>
               <p className="text-base text-white/90 leading-relaxed">

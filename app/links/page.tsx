@@ -46,7 +46,7 @@ export default function LinksPage() {
 
         {/* Friend Links Section */}
         <div className="animate-slide-up">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {friendLinks.map((link) => (
               <a
                 key={link.name}

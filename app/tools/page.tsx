@@ -92,7 +92,7 @@ export default function ToolsPage() {
         </div>
 
         {/* Tools Grid - 模仿友情链接布局 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredTools.map((tool) => (
             <a
               key={tool.name}
