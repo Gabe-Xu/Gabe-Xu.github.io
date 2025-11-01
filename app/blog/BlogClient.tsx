@@ -154,7 +154,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
   }
 
   // 处理分类选择
-  const handleCategoryClick = (category: string) => {
+  const handleCategoryClick = (category: string | null) => {
     const newCategory = selectedCategory === category ? null : category
     setSelectedCategory(newCategory)
     updateURL(newCategory, selectedTag, selectedArchive)
