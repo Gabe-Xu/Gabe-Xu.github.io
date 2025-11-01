@@ -303,11 +303,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                           e.preventDefault()
                           handleCategoryClick(post.category)
                         }}
-                        className={`font-medium transition-all px-2 py-0.5 text-xs inline-flex items-center gap-1 ${
-                          post.matchType === '匹配分类' || selectedCategory === post.category
-                            ? 'bg-xiaomi-orange text-white'
-                            : 'text-xiaomi-orange hover:bg-xiaomi-orange/10'
-                        }`}
+                        className="font-medium transition-all px-2 py-0.5 text-xs inline-flex items-center gap-1 text-gray-600 hover:text-xiaomi-text hover:bg-gray-100"
                       >
                         <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 1024 1024">
                           <path d="M132.266667 810.666667h759.466666a4.266667 4.266667 0 0 0 4.266667-4.266667V345.6a4.266667 4.266667 0 0 0-4.266667-4.266667h-335.36a3.925333 3.925333 0 0 1-2.986666-1.28l-125.44-125.44A4.224 4.224 0 0 0 424.96 213.333333H132.266667a4.266667 4.266667 0 0 0-4.266667 4.266667v588.8a4.266667 4.266667 0 0 0 4.266667 4.266667z" />
@@ -326,11 +322,7 @@ export default function BlogClient({ initialPosts, initialCategories, initialTag
                               e.preventDefault()
                               handleTagClick(tag)
                             }}
-                            className={`px-2 py-0.5 text-xs transition-colors ${
-                              isHighlighted || selectedTag === tag
-                                ? 'bg-xiaomi-orange text-white'
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                            }`}
+                            className="px-2 py-0.5 text-xs transition-colors bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-xiaomi-text"
                           >
                             #{containsKeyword && !isHighlighted ? highlightText(tag, searchQuery) : tag}
                           </button>
