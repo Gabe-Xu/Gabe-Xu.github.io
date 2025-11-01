@@ -32,7 +32,7 @@ export default function AboutPage() {
         </div>
 
         {/* Bio */}
-        <div className="mb-12 md:mb-20 animate-slide-up">
+        <div className="mb-8 md:mb-12 animate-slide-up">
           <h2 className="text-4xl font-black text-xiaomi-text mb-8 tracking-tight">我的故事</h2>
           <div className="space-y-6 text-gray-600 text-lg max-w-4xl">
             <p>
