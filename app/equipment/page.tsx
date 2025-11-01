@@ -94,7 +94,7 @@ export default function EquipmentPage() {
                 return (
                   <button
                     key={category}
-                    ref={(el) => categoryRefs.current[category] = el}
+                    ref={(el) => { categoryRefs.current[category] = el }}
                     onClick={() => {
                       setSelectedCategory(category)
                       // 移动端滚动到选中的分类
